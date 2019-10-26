@@ -1,7 +1,6 @@
 Finish SkillText in Knowledge skills page
 Partial/Full Set items bonuses handling
-
-
+Equip items handling
 
 
 
