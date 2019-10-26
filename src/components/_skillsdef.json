@@ -1,0 +1,169 @@
+{
+  "mage": {
+    "cast": {
+      "level": 1,
+      "points": 0,
+      "depends-on": ""
+    },
+    "wand": {
+      "level": 1,
+      "points": 0,
+      "depends-on": ""
+    },
+    "knowledge": {
+      "level": 1,
+      "points": 0,
+      "depends-on": ""
+    },
+    "fire": {
+      "level": 3,
+      "points": 0,
+      "depends-on": "cast"
+    },
+    "lightning": {
+      "level": 3,
+      "points": 0,
+      "depends-on": "cast"
+    },
+    "ice": {
+      "level": 3,
+      "points": 0,
+      "depends-on": "cast"
+    },
+    "fireball": {
+      "level": 5,
+      "points": 0,
+      "depends-on": "fire"
+    },
+    "levitate": {
+      "level": 5,
+      "points": 0,
+      "depends-on": "lightning"
+    },
+    "ice_armor": {
+      "level": 5,
+      "points": 0,
+      "depends-on": "ice"
+    },
+    "burn": {
+      "level": 10,
+      "points": 0,
+      "depends-on": "fireball"
+    },
+    "storm": {
+      "level": 10,
+      "points": 0,
+      "depends-on": "lightning"
+    },
+    "teleport": {
+      "level": 10,
+      "points": 0,
+      "depends-on": "levitate"
+    },
+    "ice_shield": {
+      "level": 10,
+      "points": 0,
+      "depends-on": "ice_armor"
+    },
+    "lava_blood": {
+      "level": 15,
+      "points": 0,
+      "depends-on": "burn"
+    },
+    "counter": {
+      "level": 15,
+      "points": 0,
+      "depends-on": "storm"
+    },
+    "portal": {
+      "level": 15,
+      "points": 0,
+      "depends-on": "teleport"
+    },
+    "freeze": {
+      "level": 15,
+      "points": 0,
+      "depends-on": "ice_shield"
+    },
+    "demon": {
+      "level": 20,
+      "points": 0,
+      "depends-on": "lava_blood"
+    },
+    "illusion": {
+      "level": 20,
+      "points": 0,
+      "depends-on": "portal"
+    },
+    "blizzard": {
+      "level": 20,
+      "points": 0,
+      "depends-on": "freeze"
+    },
+    "research": {
+      "level": 3,
+      "points": 0,
+      "depends-on": "knowledge"
+    },
+    "sharp_mind": {
+      "level": 5,
+      "points": 0,
+      "depends-on": "knowledge"
+    },
+    "herbalism": {
+      "level": 5,
+      "points": 0,
+      "depends-on": "research"
+    },
+    "decipher": {
+      "level": 5,
+      "points": 0,
+      "depends-on": "research"
+    },
+    "energy": {
+      "level": 10,
+      "points": 0,
+      "depends-on": "sharp_mind"
+    },
+    "elemental": {
+      "level": 10,
+      "points": 0,
+      "depends-on": "sharp_mind"
+    },
+    "identify": {
+      "level": 10,
+      "points": 0,
+      "depends-on": "decipher"
+    },
+    "osmose": {
+      "level": 15,
+      "points": 0,
+      "depends-on": "energy"
+    },
+    "blood": {
+      "level": 15,
+      "points": 0,
+      "depends-on": "elemental"
+    },
+    "alchemy": {
+      "level": 15,
+      "points": 0,
+      "depends-on": "herbalism"
+    },
+    "enchant": {
+      "level": 15,
+      "points": 0,
+      "depends-on": "identify"
+    },
+    "forcefield": {
+      "level": 20,
+      "points": 0,
+      "depends-on": "osmose"
+    },
+    "disenchant": {
+      "level": 20,
+      "points": 0,
+      "depends-on": "enchant"
+    }
+  }
+}

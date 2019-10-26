@@ -1,0 +1,26 @@
+import React from "react";
+import ReactTooltip from "react-tooltip";
+import SkillsPage from "./skillspage";
+
+const SkillText = props => {
+  return (
+    <span data-tip={props.getSkillItemModText(props.skillname)}>
+      <ReactTooltip effect="solid" html={true} />
+      {ShowLabel(props)}
+      &nbsp;({props.getSkillPoints(props.skillname)})
+    </span>
+  );
+};
+
+const ShowLabel = props => {
+  let label = "";
+  label = SkillsPage.getSkillLabelbyId(
+    props.skilltree,
+    props.getSkillId(props.skillname)
+  );
+  if (props.getSkillItemModText(props.skillname) !== "")
+    return <b className="text-primary">{label}</b>;
+  return label;
+};
+
+export default SkillText;

@@ -1,0 +1,11 @@
+Finish SkillText in Knowledge skills page
+Partial/Full Set items bonuses handling
+
+
+
+
+
+:Done
+Is label useful in skilltree app.jsx, maybe for itemslist to have real skill names
+Finish SkillText in Cast skills page
+Finish ReactTooltip in Cast skills page
