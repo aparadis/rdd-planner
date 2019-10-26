@@ -39,7 +39,7 @@ class ItemsPage extends Component {
               }
               onClick={() => this.toggleEquip(idx)}
             >
-              {this.props.itemslist[idx].equipped ? "✓" : "Equip"}
+              {isEquipped ? "✓" : "Equip"}
             </button>
           </td>
           <td>
