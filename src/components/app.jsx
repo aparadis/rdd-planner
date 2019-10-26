@@ -24,7 +24,7 @@ class App extends Component {
         itemid: 1,
         itemname: "Stick of Clue",
         equipslot: "weapon",
-        equipped: true,
+        equipped: false,
         mod: [{ skilltreeid: 1, value: 2 }, { skilltreeid: 3, value: 4 }]
       },
       {
@@ -39,7 +39,7 @@ class App extends Component {
         ]
       },
       {
-        itemid: 1,
+        itemid: 3,
         itemname: "Gloves of Numb Fingers",
         equipslot: "hand",
         equipped: true,

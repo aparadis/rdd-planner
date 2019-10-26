@@ -1,6 +1,7 @@
-Finish SkillText in Knowledge skills page
 Partial/Full Set items bonuses handling
 Equip items handling
+    Basic equip/un-Equip
+    Validations for double-equip same gear type
 
 
 
@@ -8,3 +9,4 @@ Equip items handling
 Is label useful in skilltree app.jsx, maybe for itemslist to have real skill names
 Finish SkillText in Cast skills page
 Finish ReactTooltip in Cast skills page
+Finish SkillText in Knowledge skills page

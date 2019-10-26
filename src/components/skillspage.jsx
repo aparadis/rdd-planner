@@ -77,7 +77,10 @@ class SkillsPage extends Component {
 
     for (var idx in this.props.itemslist) {
       for (var idx2 in this.props.itemslist[idx].mod) {
-        if (this.props.itemslist[idx].mod[idx2].skilltreeid === skilltreeid) {
+        if (
+          this.props.itemslist[idx].mod[idx2].skilltreeid === skilltreeid &&
+          this.props.itemslist[idx].equipped
+        ) {
           modpoints += this.props.itemslist[idx].mod[idx2].value;
           itemmodname += this.props.itemslist[idx].itemname;
         }
@@ -96,7 +99,10 @@ class SkillsPage extends Component {
 
     for (var idx in this.props.itemslist) {
       for (var idx2 in this.props.itemslist[idx].mod) {
-        if (this.props.itemslist[idx].mod[idx2].skilltreeid === skilltreeid) {
+        if (
+          this.props.itemslist[idx].mod[idx2].skilltreeid === skilltreeid &&
+          this.props.itemslist[idx].equipped
+        ) {
           if (itemmodtext !== "") itemmodtext += "<br>"; //More than 1 item mod found, so separate them
           modpoints += this.props.itemslist[idx].mod[idx2].value;
           itemmodtext +=
@@ -106,8 +112,6 @@ class SkillsPage extends Component {
         }
       }
     }
-
-    console.log(itemmodtext);
     return itemmodtext;
   };
 

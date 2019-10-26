@@ -13,13 +13,35 @@ class ItemsPage extends Component {
     );
   }
 
+  toggleEquip = itemindex => {
+    let itemslistCopy = this.props.itemslist;
+    let isEquipped = itemslistCopy[itemindex].equipped;
+
+    isEquipped
+      ? (itemslistCopy[itemindex].equipped = false)
+      : (itemslistCopy[itemindex].equipped = true);
+
+    this.setState({ itemslist: itemslistCopy });
+  };
+
   itemlistdisplay = () => {
     let output = [];
 
-    for (var idx in this.props.itemslist) {
+    for (let idx in this.props.itemslist) {
+      let isEquipped = this.props.itemslist[idx].equipped;
       output.push(
         <tr key={idx}>
           <td>{this.props.itemslist[idx].itemname}</td>
+          <td>
+            <button
+              className={
+                isEquipped ? "btn btn-sm btn-success" : "btn btn-sm btn-primary"
+              }
+              onClick={() => this.toggleEquip(idx)}
+            >
+              {this.props.itemslist[idx].equipped ? "✓" : "Equip"}
+            </button>
+          </td>
           <td>
             <ItemModsLabel
               skilltree={this.props.skilltree}
@@ -36,6 +58,7 @@ class ItemsPage extends Component {
           <thead>
             <tr>
               <th>Item</th>
+              <th>Equipped</th>
               <th>Mods</th>
             </tr>
           </thead>
