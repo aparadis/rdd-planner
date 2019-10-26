@@ -9,15 +9,7 @@ class CharSheetPage extends Component {
   };
 
   handleIncrement = (data, statType) => {
-    console.log("received data: " + data + " for stat: " + statType);
     let charSheetCopy = this.props.charSheet;
-
-    console.log(
-      "upd str to: " +
-        data +
-        " from " +
-        CharSheetUtils.getStatFromCharSheet(this.props.charSheet, statType)
-    );
 
     if (statType === "STR") charSheetCopy.str = data;
     if (statType === "INT") charSheetCopy.int = data;
