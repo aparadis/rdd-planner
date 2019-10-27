@@ -1,7 +1,8 @@
 Partial/Full Set items bonuses handling
 Equip items handling
-    Basic equip/un-Equip
     Validations for double-equip same gear type
+    Non-skill mods on items (charSheet stats, life/mana?)
+AddItem modal
 
 
 
@@ -10,3 +11,4 @@ Is label useful in skilltree app.jsx, maybe for itemslist to have real skill nam
 Finish SkillText in Cast skills page
 Finish ReactTooltip in Cast skills page
 Finish SkillText in Knowledge skills page
+Basic equip/un-Equip

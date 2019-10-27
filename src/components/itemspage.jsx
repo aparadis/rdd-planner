@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ItemModsLabel from "./itemmodslabel";
+import ItemAddModal from "./itemaddmodal";
 
 class ItemsPage extends Component {
   state = {};
@@ -7,11 +8,18 @@ class ItemsPage extends Component {
   render() {
     return (
       <div style={{ display: this.props.show ? "block" : "none" }}>
-        <h3>lol items</h3>
+        <br />
+        <ItemAddModal />
+        <br />
+        <br />
         {this.itemlistdisplay()}
       </div>
     );
   }
+
+  showAddItem = () => {
+    return <ItemAddModal />;
+  };
 
   toggleEquip = itemindex => {
     let itemslistCopy = this.props.itemslist;
