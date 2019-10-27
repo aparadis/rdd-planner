@@ -9,6 +9,7 @@ class RoStatBlock extends Component {
           type="text"
           className="form-control"
           value={this.getModFromCharSheet(this.props.statType)}
+          style={{ width: 50 }}
           disabled
         ></input>
       </div>

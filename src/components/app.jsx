@@ -315,7 +315,11 @@ class App extends Component {
             <h1>RDD Character Planner</h1>
           </div>
 
-          <Nav variant="tabs" defaultActiveKey="#sheet">
+          <Nav
+            style={{ background: "whitesmoke" }}
+            variant="tabs"
+            defaultActiveKey="#sheet"
+          >
             <Nav.Item>
               <Nav.Link href="#sheet" onSelect={this.showCharSheetPage}>
                 Sheet

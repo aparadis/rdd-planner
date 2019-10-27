@@ -24,7 +24,7 @@ class CharSheetPage extends Component {
   render() {
     return (
       <div
-        className="col-6 no-gutters"
+        className="no-gutters"
         style={{ display: this.props.show ? "block" : "none" }}
         id="stats-title"
       >
@@ -35,6 +35,42 @@ class CharSheetPage extends Component {
             &nbsp;(Level: {CharSheetUtils.getLevelFromXP(this.props.charSheet)})
           </h3>
         </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Stats</th>
+              <th></th>
+              <th>Rolls</th>
+              <th>Bonus</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.statsList.map(stat => (
+              <tr key={stat + "div-row"}>
+                <td>{stat}</td>
+                <td>
+                  <StatBlock
+                    charSheet={this.props.charSheet}
+                    dataCallBack={this.handleIncrement}
+                    statType={stat}
+                    key={stat}
+                  />
+                </td>
+                <td>
+                  <RoStatBlock
+                    charSheet={this.props.charSheet}
+                    statType={stat}
+                    key={stat + "-rolls"}
+                  />
+                </td>
+                <td>
+                  <RoStatBlock key={stat + "-bonus"} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {/*
         <div className="row no-gutters" id="stats">
           <div className="col no-gutters" id="stats-title">
             <h2>Stats</h2>
@@ -97,7 +133,7 @@ class CharSheetPage extends Component {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

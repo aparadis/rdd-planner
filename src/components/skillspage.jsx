@@ -14,11 +14,11 @@ class SkillsPage extends Component {
   render() {
     return (
       <div
-        className="col-6 no-gutters"
+        className="no-gutters"
         style={{ display: this.props.show ? "block" : "none" }}
       >
+        <br />
         {this.showStatusBar()}
-
         <Accordion defaultActiveKey="0">
           <Card className={"border-0"}>
             <Card.Header>
@@ -139,7 +139,7 @@ class SkillsPage extends Component {
   };
 
   showStatusBar = () => {
-    /*
+    /*  Might use this later on with mutiple skill trees..
     if (this.state.enoughspalert) {
       return (
         <div
@@ -187,8 +187,21 @@ class SkillsPage extends Component {
       );
     }*/
     return (
-      <div className="alert alert-dark">
-        Skillpoints: ({this.props.charSheet.sp})
+      <div className="card">
+        <div class="card-body">
+          <h5>
+            Skillpoints:&nbsp;
+            <span
+              className={
+                this.props.charSheet.sp > 0
+                  ? "badge badge-secondary"
+                  : "badge badge-danger"
+              }
+            >
+              {this.props.charSheet.sp}
+            </span>
+          </h5>
+        </div>
       </div>
     );
   };

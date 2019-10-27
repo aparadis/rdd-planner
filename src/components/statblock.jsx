@@ -20,13 +20,14 @@ class StatBlock extends Component {
             this.props.charSheet,
             this.props.statType
           )}
+          style={{ width: 45 }}
           className="form-control"
           onChange={this.handleStatUpdate}
         ></input>
         <button
           onClick={this.handleIncrement}
           className="btn btn-primary btn-sm"
-          style={{ marginLeft: 10 }}
+          style={{ marginLeft: 10, marginRight: 5 }}
         >
           +
         </button>
