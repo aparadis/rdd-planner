@@ -188,7 +188,7 @@ class SkillsPage extends Component {
     }*/
     return (
       <div className="card">
-        <div class="card-body">
+        <div className="card-body">
           <h5>
             Skillpoints:&nbsp;
             <span

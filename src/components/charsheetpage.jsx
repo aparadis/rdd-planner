@@ -4,6 +4,18 @@ import RoStatBlock from "./ro-statblock";
 import CharSheetUtils from "../utils/charsheetutils";
 
 class CharSheetPage extends Component {
+  constructor(props) {
+    super(props);
+    this.inputXpRef = React.createRef();
+  }
+
+  componentDidUpdate(prevProps) {
+    let xp = this.props.charSheet.xp;
+    if (this.inputXpRef.current.value != xp) {
+      this.inputXpRef.current.value = xp;
+    }
+  }
+
   state = {
     statsList: ["CON", "STR", "DEX", "INT", "WIS", "CHA"]
   };
@@ -21,6 +33,30 @@ class CharSheetPage extends Component {
     this.setState({ charSheet: charSheetCopy });
   };
 
+  handleXpUpdate = e => {
+    let charSheetCopy = this.props.charSheet;
+
+    charSheetCopy.lastxp = charSheetCopy.xp;
+    let lastlvl = CharSheetUtils.getLevelFromXP(charSheetCopy);
+
+    charSheetCopy.xp = +e.target.value;
+    let curlvl = CharSheetUtils.getLevelFromXP(charSheetCopy);
+
+    //Update SP based on new lvl
+    if (curlvl - lastlvl >= 1) charSheetCopy.sp += (curlvl - lastlvl) * 2;
+    else if (curlvl - lastlvl < 1) {
+      //Lvl went down, we'll be over assigned on the skilpoints so reset the skilltree
+      let skilltreeCopy = this.props.skilltree;
+      for (let idx in skilltreeCopy) {
+        skilltreeCopy[idx].points = 0;
+      }
+      charSheetCopy.sp = curlvl + (curlvl - 1);
+      this.setState({ skilltree: skilltreeCopy });
+      this.setState({ charSheet: charSheetCopy });
+    }
+    this.setState({ charSheet: charSheetCopy });
+  };
+
   render() {
     return (
       <div
@@ -29,12 +65,24 @@ class CharSheetPage extends Component {
         id="stats-title"
       >
         <div className="row no-gutters" id="level-title">
-          <h3 className="table">
+          <h3>
             <br />
-            XP: {this.props.charSheet.xp}
-            &nbsp;(Level: {CharSheetUtils.getLevelFromXP(this.props.charSheet)})
+            <div className="input-group">
+              XP:&nbsp;
+              <input
+                type="text"
+                defaultValue={this.props.charSheet.xp}
+                style={{ width: 100 }}
+                className="form-control"
+                onBlur={this.handleXpUpdate}
+                ref={this.inputXpRef}
+              ></input>
+              &nbsp;(Level:{" "}
+              {CharSheetUtils.getLevelFromXP(this.props.charSheet)})
+            </div>
           </h3>
         </div>
+        <br />
         <table>
           <thead>
             <tr>

@@ -1,23 +1,30 @@
 import React, { Component } from "react";
 import CharSheetPage from "./charsheetpage";
+import CharSheetUtils from "../utils/charsheetutils";
 import ItemsPage from "./itemspage";
 import SkillsPage from "./skillspage";
 import { Nav } from "react-bootstrap";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    let curlvl = CharSheetUtils.getLevelFromXP(this.state.charSheet);
+    this.state.charSheet.sp = curlvl + (curlvl - 1);
+  }
   state = {
     count: 0,
     statsList: ["CON", "STR", "DEX", "INT", "WIS", "CHA"],
     classList: ["cleric", "fighter", "mage", "rogue"],
     charSheet: {
       xp: 269100,
+      lastxp: 0,
       con: 13,
       str: 10,
       dex: 23,
       int: 23,
       wis: 10,
       cha: 9,
-      sp: 50
+      sp: 0
     },
     itemslist: [
       {
@@ -340,6 +347,7 @@ class App extends Component {
           <CharSheetPage
             charSheet={this.state.charSheet}
             show={this.state.showCharSheetPage}
+            skilltree={this.state.skilltree}
           />
           <ItemsPage
             charSheet={this.state.charSheet}
