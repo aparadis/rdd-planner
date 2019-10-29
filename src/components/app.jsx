@@ -37,7 +37,7 @@ class App extends Component {
       {
         itemid: 2,
         itemname: "Boots of Greater Fiyaaa",
-        equipslot: "boots",
+        equipslot: "boot",
         equipped: true,
         mod: [
           { skilltreeid: 1, value: 3 },
@@ -48,7 +48,7 @@ class App extends Component {
       {
         itemid: 3,
         itemname: "Gloves of Numb Fingers",
-        equipslot: "hand",
+        equipslot: "glove",
         equipped: true,
         mod: [{ skilltreeid: 1, value: 3 }, { skilltreeid: 6, value: 4 }]
       }

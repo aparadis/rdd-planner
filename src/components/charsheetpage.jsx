@@ -82,6 +82,10 @@ class CharSheetPage extends Component {
             </div>
           </h3>
         </div>
+        <small className="text-muted">
+          Leveling down will reset the skill tree!
+        </small>
+        <br />
         <br />
         <table>
           <thead>

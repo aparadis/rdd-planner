@@ -9,16 +9,21 @@ class ItemsPage extends Component {
     return (
       <div style={{ display: this.props.show ? "block" : "none" }}>
         <br />
-        <ItemAddModal />
+        <ItemAddModal
+          itemslist={this.props.itemslist}
+          handleSave={this.handleSave}
+          skilltree={this.props.skilltree}
+        />
         <br />
         <br />
         {this.itemlistdisplay()}
       </div>
     );
   }
-
-  showAddItem = () => {
-    return <ItemAddModal />;
+  handleSave = item => {
+    let itemslistCopy = this.props.itemslist;
+    itemslistCopy.push(item);
+    this.setState({ itemslist: itemslistCopy });
   };
 
   toggleEquip = itemindex => {
@@ -40,6 +45,7 @@ class ItemsPage extends Component {
       output.push(
         <tr key={idx}>
           <td>{this.props.itemslist[idx].itemname}</td>
+          <td>{this.props.itemslist[idx].equipslot}</td>
           <td>
             <button
               className={
@@ -66,6 +72,7 @@ class ItemsPage extends Component {
           <thead>
             <tr>
               <th>Item</th>
+              <th>Slot</th>
               <th>Equipped</th>
               <th>Mods</th>
             </tr>
