@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Modal } from "react-bootstrap";
+import Select from "react-select";
 
 class ItemAddModel extends Component {
   state = {
@@ -10,8 +11,13 @@ class ItemAddModel extends Component {
     equipped: false,
     mod: [{}],
     isValidName: false,
-    isValidSlot: false
+    isValidSlot: false,
+    skillSuggestions: []
   };
+
+  componentDidMount() {
+    this.buildSkillSuggestions();
+  }
 
   render() {
     return (
@@ -52,11 +58,42 @@ class ItemAddModel extends Component {
                   <option value="neck">Neck</option>
                 </select>
                 <label htmlFor="itemskillmod">Item Skill Mods:</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="itemskillmod"
-                ></input>
+                <table className="table">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <Select
+                          options={this.state.skillSuggestions}
+                          onChange={this.handleSuggestion}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="itemskillmods"
+                          style={{ width: 50 }}
+                        ></input>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Select
+                          options={this.state.skillSuggestions}
+                          onChange={this.handleSuggestion}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="itemskillmods"
+                          style={{ width: 50 }}
+                        ></input>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
                 <label htmlFor="itemstatmod">Item Stat Mods:</label>
                 <input
                   type="text"
@@ -86,6 +123,23 @@ class ItemAddModel extends Component {
     );
   }
 
+  handleSuggestion = e => {
+    console.log(e);
+  };
+
+  buildSkillSuggestions = () => {
+    let skills = [];
+
+    for (let idx in this.props.skilltree) {
+      skills.push({
+        value: this.props.skilltree[idx].id,
+        label: this.props.skilltree[idx].label
+      });
+    }
+    console.log(skills);
+    this.setState({ skillSuggestions: skills });
+  };
+
   setShow = state => {
     this.setState({ show: state });
   };
@@ -110,8 +164,6 @@ class ItemAddModel extends Component {
     this.setState({ equipslot: e.target.value });
   };
 
-  handleItemMod = e => {};
-
   handleSave = () => {
     let tmpobj = {};
 
@@ -119,20 +171,27 @@ class ItemAddModel extends Component {
     tmpobj.equipslot = this.state.equipslot;
 
     /*temporary until handling skill mods selection*/
-    tmpobj.mod = [{}, {}];
+    tmpobj.mod = [];
 
-    tmpobj.mod[0].skilltreeid = Math.floor(
+    let tmpitemmods = {};
+
+    tmpitemmods.skilltreeid = Math.floor(
       Math.random() * (0 - this.props.skilltree.length + 1) +
         this.props.skilltree.length +
         1
     );
-    tmpobj.mod[0].value = Math.floor(Math.random() * (0 - 4) + 4);
-    tmpobj.mod[1].skilltreeid = Math.floor(
+    tmpitemmods.value = Math.floor(Math.random() * (1 - 4) + 4);
+
+    tmpobj.mod.push(tmpitemmods);
+    tmpitemmods = {};
+
+    tmpitemmods.skilltreeid = Math.floor(
       Math.random() * (0 - this.props.skilltree.length + 1) +
         this.props.skilltree.length +
         1
     );
-    tmpobj.mod[1].value = Math.floor(Math.random() * (0 - 4) + 4);
+    tmpitemmods.value = Math.floor(Math.random() * (1 - 4) + 4);
+    tmpobj.mod.push(tmpitemmods);
     /*temporary until handling skill mods selection*/
 
     if (this.state.isValidName && this.state.isValidSlot) {
