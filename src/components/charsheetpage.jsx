@@ -11,7 +11,7 @@ class CharSheetPage extends Component {
 
   componentDidUpdate(prevProps) {
     let xp = this.props.charSheet.xp;
-    if (this.inputXpRef.current.value != xp) {
+    if (this.inputXpRef.current.value !== xp) {
       this.inputXpRef.current.value = xp;
     }
   }
@@ -23,12 +23,19 @@ class CharSheetPage extends Component {
   handleIncrement = (data, statType) => {
     let charSheetCopy = this.props.charSheet;
 
-    if (statType === "STR") charSheetCopy.str = data;
-    if (statType === "INT") charSheetCopy.int = data;
-    if (statType === "DEX") charSheetCopy.dex = data;
-    if (statType === "WIS") charSheetCopy.wis = data;
-    if (statType === "CON") charSheetCopy.con = data;
-    if (statType === "CHA") charSheetCopy.cha = data;
+    if (charSheetCopy.lastStatUpdate === statType) return;
+    else {
+      if (charSheetCopy.statpoints > 0) {
+        charSheetCopy.statpoints -= 1;
+      } else return;
+      charSheetCopy.lastStatUpdate = statType;
+      if (statType === "STR") charSheetCopy.str = data;
+      if (statType === "INT") charSheetCopy.int = data;
+      if (statType === "DEX") charSheetCopy.dex = data;
+      if (statType === "WIS") charSheetCopy.wis = data;
+      if (statType === "CON") charSheetCopy.con = data;
+      if (statType === "CHA") charSheetCopy.cha = data;
+    }
 
     this.setState({ charSheet: charSheetCopy });
   };
@@ -43,14 +50,25 @@ class CharSheetPage extends Component {
     let curlvl = CharSheetUtils.getLevelFromXP(charSheetCopy);
 
     //Update SP based on new lvl
-    if (curlvl - lastlvl >= 1) charSheetCopy.sp += (curlvl - lastlvl) * 2;
-    else if (curlvl - lastlvl < 1) {
+    if (curlvl - lastlvl >= 1) {
+      charSheetCopy.sp += (curlvl - lastlvl) * 2;
+      charSheetCopy.statpoints += (curlvl - lastlvl) * 2;
+      charSheetCopy.lastStatUpdate = "";
+    } else if (curlvl - lastlvl < 1) {
       //Lvl went down, we'll be over assigned on the skilpoints so reset the skilltree
+      //Also reset stat points assignation
       let skilltreeCopy = this.props.skilltree;
       for (let idx in skilltreeCopy) {
         skilltreeCopy[idx].points = 0;
       }
       charSheetCopy.sp = curlvl + (curlvl - 1);
+      charSheetCopy.statpoints = 15 + (curlvl - 1) * 2;
+      charSheetCopy.con = 5;
+      charSheetCopy.str = 5;
+      charSheetCopy.dex = 5;
+      charSheetCopy.int = 5;
+      charSheetCopy.wis = 5;
+      charSheetCopy.char = 5;
       this.setState({ skilltree: skilltreeCopy });
       this.setState({ charSheet: charSheetCopy });
     }
@@ -83,9 +101,22 @@ class CharSheetPage extends Component {
           </h3>
         </div>
         <small className="text-muted">
-          Leveling down will reset the skill tree!
+          Leveling down will reset the skill tree and stat points!
         </small>
         <br />
+        <br />
+        <h6>
+          Stat Points:{" "}
+          <span
+            className={
+              this.props.charSheet.statpoints > 0
+                ? "badge badge-primary"
+                : "badge badge-danger"
+            }
+          >
+            {this.props.charSheet.statpoints}
+          </span>
+        </h6>
         <br />
         <table>
           <thead>
@@ -105,6 +136,7 @@ class CharSheetPage extends Component {
                     charSheet={this.props.charSheet}
                     dataCallBack={this.handleIncrement}
                     statType={stat}
+                    lastStatUpdate={this.props.lastStatUpdate}
                     key={stat}
                   />
                 </td>

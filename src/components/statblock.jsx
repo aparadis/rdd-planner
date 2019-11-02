@@ -12,7 +12,7 @@ class StatBlock extends Component {
       this.props.charSheet,
       this.props.statType
     );
-    if (this.inputRef.current.value != stat) {
+    if (this.inputRef.current.value !== stat) {
       this.inputRef.current.value = stat;
     }
   }
@@ -33,7 +33,12 @@ class StatBlock extends Component {
         ></input>
         <button
           onClick={this.handleIncrement}
-          className="btn btn-primary btn-sm"
+          className={
+            this.props.charSheet.statpoints > 0 &&
+            this.props.charSheet.lastStatUpdate !== this.props.statType
+              ? "btn btn-primary btn-sm"
+              : "btn btn-secondary btn-sm"
+          }
           style={{ marginLeft: 10, marginRight: 5 }}
         >
           +

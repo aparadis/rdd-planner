@@ -10,20 +10,23 @@ class App extends Component {
     super(props);
     let curlvl = CharSheetUtils.getLevelFromXP(this.state.charSheet);
     this.state.charSheet.sp = curlvl + (curlvl - 1);
+    this.state.charSheet.statpoints = 15 + (curlvl - 1) * 2;
   }
   state = {
     count: 0,
     statsList: ["CON", "STR", "DEX", "INT", "WIS", "CHA"],
     classList: ["cleric", "fighter", "mage", "rogue"],
     charSheet: {
-      xp: 269100,
+      xp: 1,
       lastxp: 0,
-      con: 13,
-      str: 10,
-      dex: 23,
-      int: 23,
-      wis: 10,
-      cha: 9,
+      con: 5,
+      str: 5,
+      dex: 5,
+      int: 5,
+      wis: 5,
+      cha: 5,
+      statpoints: 0,
+      lastStatUpdate: "",
       sp: 0
     },
     itemslist: [
@@ -314,6 +317,19 @@ class App extends Component {
     });
   };
 
+  loadState = () => {
+    //https://api.jsonbin.io/b/5dbbaac6318745432d31136f
+    //https://api.myjson.com/bins/t21ys
+    this.showCharSheetPage();
+    fetch("https://api.jsonbin.io/b/5dbcf55cf9f7965e778aa979")
+      .then(response => response.json())
+      .then(data => this.setState({ ...data }));
+  };
+
+  saveState = () => {
+    console.log(JSON.stringify(this.state));
+  };
+
   render() {
     return (
       <div className="container no-gutters" id="main">
@@ -321,14 +337,13 @@ class App extends Component {
           <div className="row no-gutters" id="main-title">
             <h1>RDD Character Planner</h1>
           </div>
-
           <Nav
             style={{ background: "whitesmoke" }}
             variant="tabs"
             defaultActiveKey="#sheet"
           >
             <Nav.Item>
-              <Nav.Link href="#sheet" onSelect={this.showCharSheetPage}>
+              <Nav.Link href="#sheet" onClick={this.showCharSheetPage}>
                 Sheet
               </Nav.Link>
             </Nav.Item>
@@ -343,11 +358,11 @@ class App extends Component {
               </Nav.Link>
             </Nav.Item>
           </Nav>
-
           <CharSheetPage
             charSheet={this.state.charSheet}
             show={this.state.showCharSheetPage}
             skilltree={this.state.skilltree}
+            lastStatUpdate={this.state.lastStatUpdate}
           />
           <ItemsPage
             charSheet={this.state.charSheet}
@@ -361,6 +376,15 @@ class App extends Component {
             skilltree={this.state.skilltree}
             itemslist={this.state.itemslist}
           />
+          {console.log(JSON.stringify(this.state))}
+          <br />
+          <button className="btn btn-primary" onClick={() => this.loadState()}>
+            Test load state HTTP
+          </button>
+          &nbsp;
+          <button className="btn btn-primary" onClick={() => this.saveState()}>
+            Save state
+          </button>
         </div>
       </div>
     );

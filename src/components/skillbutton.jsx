@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 class SkillButton extends Component {
-  state = {};
-
   checkIfActive = () => {
     if (this.props.checkAllSkillDeps(this.props.skilltreeindex)) return true;
     else return false;
