@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import CharSheetUtils from "../utils/charsheetutils";
-import { Button, Accordion, Card } from "react-bootstrap";
-import SkillTreeMageCast from "./skilltreemagecast";
-import SkillTreeMageKl from "./skilltreemagekl";
+import SkillTreeMagePage from "./skilltreemagepage";
+import { Nav } from "react-bootstrap";
 
 class SkillsPage extends Component {
   state = {
-    /* levelreqalert: 0,
-    skilldepalert: 0,
-    maxskillalert: 0,
-    enoughspalert: 0*/
+    showPage: [
+      { name: "fightertree", show: 0 },
+      { name: "clerictree", show: 0 },
+      { name: "magetree", show: 1 },
+      { name: "roguetree", show: 0 }
+    ]
   };
   render() {
     return (
@@ -19,53 +20,69 @@ class SkillsPage extends Component {
       >
         <br />
         {this.showStatusBar()}
-        <Accordion defaultActiveKey="0">
-          <Card className={"border-0"}>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="primary" eventKey="0">
-                Cast Tree
-              </Accordion.Toggle>
-            </Card.Header>
-
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                <SkillTreeMageCast
-                  skilltree={this.props.skilltree}
-                  getSkillIndex={this.getSkillIndex}
-                  handleSkillPoint={this.handleSkillPoint}
-                  checkAllSkillDeps={this.checkAllSkillDeps}
-                  getSkillPoints={this.getSkillPoints}
-                  getSkillItemModText={this.getSkillItemModText}
-                  getSkillId={this.getSkillId}
-                />
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-          <Card className={"border-0"}>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="primary" eventKey="1">
-                Knowledge Tree
-              </Accordion.Toggle>
-            </Card.Header>
-
-            <Accordion.Collapse eventKey="1">
-              <Card.Body>
-                <SkillTreeMageKl
-                  skilltree={this.props.skilltree}
-                  getSkillIndex={this.getSkillIndex}
-                  handleSkillPoint={this.handleSkillPoint}
-                  checkAllSkillDeps={this.checkAllSkillDeps}
-                  getSkillPoints={this.getSkillPoints}
-                  getSkillItemModText={this.getSkillItemModText}
-                  getSkillId={this.getSkillId}
-                />
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </Accordion>
+        <Nav
+          style={{ background: "whitesmoke" }}
+          variant="tabs"
+          defaultActiveKey="#mage"
+        >
+          <Nav.Item>
+            <Nav.Link
+              href="#fighter"
+              onClick={() => this.showPage("fightertree")}
+            >
+              Fighter
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link
+              href="#cleric"
+              onClick={() => this.showPage("clerictree")}
+            >
+              Cleric
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="#mage" onClick={() => this.showPage("magetree")}>
+              Mage
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="#rogue" onClick={() => this.showPage("roguetree")}>
+              Rogue
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+        <SkillTreeMagePage
+          skilltree={this.props.skilltree}
+          getSkillIndex={this.getSkillIndex}
+          handleSkillPoint={this.handleSkillPoint}
+          checkAllSkillDeps={this.checkAllSkillDeps}
+          getSkillPoints={this.getSkillPoints}
+          getSkillItemModText={this.getSkillItemModText}
+          getSkillId={this.getSkillId}
+          show={this.isPageVisible("magetree")}
+        />
       </div>
     );
   }
+
+  showPage = page => {
+    console.log(page);
+    let showPageCopy = this.state.showPage;
+    for (let idx in this.state.showPage) {
+      if (this.state.showPage[idx].name === page) showPageCopy[idx].show = 1;
+      else showPageCopy[idx].show = 0;
+    }
+    this.setState({ showPage: showPageCopy });
+  };
+
+  isPageVisible = page => {
+    for (let idx in this.state.showPage) {
+      if (this.state.showPage[idx].name === page)
+        if (this.state.showPage[idx].show === 1) return true;
+        else return false;
+    }
+  };
 
   getSkillPoints = skillname => {
     let modpoints = 0;
