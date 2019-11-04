@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Button, Accordion, Card } from "react-bootstrap";
-import SkillTreeMageCast from "./skilltreemagecast";
-import SkillTreeMageKl from "./skilltreemagekl";
+import SkillTreeFighterOff from "./skilltreefighteroff";
+import SkillTreeFighterDef from "./skilltreefighterdef";
 
-class SkillTreeMagePage extends Component {
+class SkillTreeFighterPage extends Component {
   render() {
     return (
       <div
@@ -14,13 +14,13 @@ class SkillTreeMagePage extends Component {
           <Card className={"border-0"}>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="primary" eventKey="0">
-                Cast Tree
+                Offensive Tree
               </Accordion.Toggle>
             </Card.Header>
 
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                <SkillTreeMageCast
+                <SkillTreeFighterOff
                   skilltree={this.props.skilltree}
                   getSkillIndex={this.props.getSkillIndex}
                   handleSkillPoint={this.props.handleSkillPoint}
@@ -35,13 +35,13 @@ class SkillTreeMagePage extends Component {
           <Card className={"border-0"}>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="primary" eventKey="1">
-                Knowledge Tree
+                Defensive Tree
               </Accordion.Toggle>
             </Card.Header>
 
             <Accordion.Collapse eventKey="1">
               <Card.Body>
-                <SkillTreeMageKl
+                <SkillTreeFighterDef
                   skilltree={this.props.skilltree}
                   getSkillIndex={this.props.getSkillIndex}
                   handleSkillPoint={this.props.handleSkillPoint}
@@ -59,4 +59,4 @@ class SkillTreeMagePage extends Component {
   }
 }
 
-export default SkillTreeMagePage;
+export default SkillTreeFighterPage;

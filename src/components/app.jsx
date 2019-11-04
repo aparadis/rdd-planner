@@ -286,6 +286,395 @@ class App extends Component {
         points: 0,
         level: 20,
         depends: 32
+      },
+      {
+        id: 35,
+        name: "hammer",
+        label: "Hammer",
+        points: 0,
+        level: 1,
+        depends: 0
+      },
+      {
+        id: 36,
+        name: "sword",
+        label: "Sword",
+        points: 0,
+        level: 1,
+        depends: 0
+      },
+      {
+        id: 37,
+        name: "archery",
+        label: "Archery",
+        points: 0,
+        level: 1,
+        depends: 0
+      },
+      { id: 38, name: "axe", label: "Axe", points: 0, level: 3, depends: 35 },
+      {
+        id: 39,
+        name: "spear",
+        label: "Spear",
+        points: 0,
+        level: 3,
+        depends: 36
+      },
+      { id: 40, name: "hunt", label: "Hunt", points: 0, level: 3, depends: 37 },
+      {
+        id: 41,
+        name: "melee",
+        label: "Melee",
+        points: 0,
+        level: 5,
+        depends: 39
+      },
+      {
+        id: 42,
+        name: "track",
+        label: "Track",
+        points: 0,
+        level: 5,
+        depends: 40
+      },
+      { id: 43, name: "aim", label: "Aim", points: 0, level: 5, depends: 37 },
+      {
+        id: 44,
+        name: "mine",
+        label: "Mine",
+        points: 0,
+        level: 10,
+        depends: 38
+      },
+      {
+        id: 45,
+        name: "injure",
+        label: "Injure",
+        points: 0,
+        level: 10,
+        depends: 41
+      },
+      {
+        id: 46,
+        name: "pierce",
+        label: "Pierce",
+        points: 0,
+        level: 10,
+        depends: 43
+      },
+      {
+        id: 47,
+        name: "cleave",
+        label: "Cleave",
+        points: 0,
+        level: 15,
+        depends: 45
+      },
+      {
+        id: 48,
+        name: "stun",
+        label: "Stun",
+        points: 0,
+        level: 15,
+        depends: 45
+      },
+      {
+        id: 49,
+        name: "stack",
+        label: "Stack",
+        points: 0,
+        level: 15,
+        depends: 46
+      },
+      {
+        id: 50,
+        name: "smith",
+        label: "Smith",
+        points: 0,
+        level: 20,
+        depends: 47
+      },
+      {
+        id: 51,
+        name: "volley",
+        label: "Volley",
+        points: 0,
+        level: 20,
+        depends: 49
+      },
+      {
+        id: 52,
+        name: "defend",
+        label: "Defend",
+        points: 0,
+        level: 1,
+        depends: 0
+      },
+      {
+        id: 53,
+        name: "provoke",
+        label: "Provoke",
+        points: 0,
+        level: 3,
+        depends: 52
+      },
+      {
+        id: 54,
+        name: "vitality",
+        label: "Vitality",
+        points: 0,
+        level: 3,
+        depends: 52
+      },
+      {
+        id: 55,
+        name: "shield",
+        label: "Shield",
+        points: 0,
+        level: 3,
+        depends: 52
+      },
+      {
+        id: 56,
+        name: "iron_body",
+        label: "Iron Body",
+        points: 0,
+        level: 5,
+        depends: 54
+      },
+      {
+        id: 57,
+        name: "health",
+        label: "Health",
+        points: 0,
+        level: 5,
+        depends: 54
+      },
+      { id: 58, name: "bash", label: "Bash", points: 0, level: 5, depends: 55 },
+      {
+        id: 59,
+        name: "intimidate",
+        label: "Intimidate",
+        points: 0,
+        level: 10,
+        depends: 53
+      },
+      {
+        id: 60,
+        name: "berserk",
+        label: "Berserk",
+        points: 0,
+        level: 15,
+        depends: 59
+      },
+      {
+        id: 61,
+        name: "die_hard",
+        label: "Die Hard",
+        points: 0,
+        level: 20,
+        depends: 60
+      },
+      { id: 62, name: "aid", label: "Aid", points: 0, level: 1, depends: 0 },
+      { id: 63, name: "pray", label: "Pray", points: 0, level: 1, depends: 0 },
+      { id: 64, name: "war", label: "War", points: 0, level: 1, depends: 0 },
+      { id: 65, name: "heal", label: "Heal", points: 0, level: 3, depends: 62 },
+      {
+        id: 66,
+        name: "light",
+        label: "Light",
+        points: 0,
+        level: 3,
+        depends: 63
+      },
+      {
+        id: 67,
+        name: "water",
+        label: "Water",
+        points: 0,
+        level: 3,
+        depends: 63
+      },
+      { id: 68, name: "dark", label: "Dark", points: 0, level: 3, depends: 63 },
+      {
+        id: 69,
+        name: "bless",
+        label: "Bless",
+        points: 0,
+        level: 5,
+        depends: 66
+      },
+      { id: 70, name: "cure", label: "Cure", points: 0, level: 5, depends: 66 },
+      { id: 71, name: "rain", label: "Rain", points: 0, level: 5, depends: 67 },
+      {
+        id: 72,
+        name: "curse",
+        label: "Curse",
+        points: 0,
+        level: 5,
+        depends: 68
+      },
+      {
+        id: 73,
+        name: "banish",
+        label: "Banish",
+        points: 0,
+        level: 10,
+        depends: 69
+      },
+      {
+        id: 74,
+        name: "dispel",
+        label: "Dispel",
+        points: 0,
+        level: 10,
+        depends: 72
+      },
+      {
+        id: 75,
+        name: "flame",
+        label: "Flame",
+        points: 0,
+        level: 15,
+        depends: 69
+      },
+      {
+        id: 76,
+        name: "exorcism",
+        label: "Exorcism",
+        points: 0,
+        level: 15,
+        depends: 73
+      },
+      {
+        id: 77,
+        name: "mass_cure",
+        label: "Mass Cure",
+        points: 0,
+        level: 15,
+        depends: 70
+      },
+      {
+        id: 78,
+        name: "summon",
+        label: "Summon",
+        points: 0,
+        level: 15,
+        depends: 71
+      },
+      {
+        id: 79,
+        name: "raise",
+        label: "Raise",
+        points: 0,
+        level: 15,
+        depends: 74
+      },
+      {
+        id: 80,
+        name: "leech",
+        label: "Leech",
+        points: 0,
+        level: 15,
+        depends: 74
+      },
+      {
+        id: 81,
+        name: "aura",
+        label: "Aura",
+        points: 0,
+        level: 20,
+        depends: 75
+      },
+      {
+        id: 82,
+        name: "holy",
+        label: "Holy",
+        points: 0,
+        level: 20,
+        depends: 76
+      },
+      {
+        id: 83,
+        name: "regen",
+        label: "Regen",
+        points: 0,
+        level: 20,
+        depends: 77
+      },
+      {
+        id: 84,
+        name: "acid_rain",
+        label: "Acid Rain",
+        points: 0,
+        level: 20,
+        depends: 78
+      },
+      {
+        id: 85,
+        name: "necromancy",
+        label: "Necromancy",
+        points: 0,
+        level: 20,
+        depends: 79
+      },
+      {
+        id: 86,
+        name: "force",
+        label: "Force",
+        points: 0,
+        level: 20,
+        depends: 80
+      },
+      { id: 87, name: "lore", label: "Lore", points: 0, level: 1, depends: 0 },
+      {
+        id: 88,
+        name: "forage",
+        label: "Forage",
+        points: 0,
+        level: 3,
+        depends: 87
+      },
+      { id: 89, name: "cook", label: "Cook", points: 0, level: 5, depends: 88 },
+      {
+        id: 90,
+        name: "perceive",
+        label: "Perceive",
+        points: 0,
+        level: 5,
+        depends: 87
+      },
+      {
+        id: 91,
+        name: "brew",
+        label: "Brew",
+        points: 0,
+        level: 10,
+        depends: 89
+      },
+      {
+        id: 92,
+        name: "iron_will",
+        label: "Iron Will",
+        points: 0,
+        level: 10,
+        depends: 90
+      },
+      {
+        id: 93,
+        name: "meditate",
+        label: "Meditate",
+        points: 0,
+        level: 15,
+        depends: 92
+      },
+      {
+        id: 94,
+        name: "trinket",
+        label: "Trinket",
+        points: 0,
+        level: 20,
+        depends: 93
       }
     ],
     showCharSheetPage: 1,
@@ -321,7 +710,7 @@ class App extends Component {
     //https://api.jsonbin.io/b/5dbbaac6318745432d31136f
     //https://api.myjson.com/bins/t21ys
     this.showCharSheetPage();
-    fetch("https://api.jsonbin.io/b/5dbcf55cf9f7965e778aa979")
+    fetch("https://api.jsonbin.io/b/5dbcf55cf9f7965e778aa979/1")
       .then(response => response.json())
       .then(data => this.setState({ ...data }));
   };

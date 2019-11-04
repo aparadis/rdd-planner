@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import CharSheetUtils from "../utils/charsheetutils";
 import SkillTreeMagePage from "./skilltreemagepage";
+import SkillTreeFighterPage from "./skilltreefighterpage";
+import SkillTreeClericPage from "./skilltreeclericpage";
 import { Nav } from "react-bootstrap";
 
 class SkillsPage extends Component {
@@ -61,6 +63,26 @@ class SkillsPage extends Component {
           getSkillItemModText={this.getSkillItemModText}
           getSkillId={this.getSkillId}
           show={this.isPageVisible("magetree")}
+        />
+        <SkillTreeFighterPage
+          skilltree={this.props.skilltree}
+          getSkillIndex={this.getSkillIndex}
+          handleSkillPoint={this.handleSkillPoint}
+          checkAllSkillDeps={this.checkAllSkillDeps}
+          getSkillPoints={this.getSkillPoints}
+          getSkillItemModText={this.getSkillItemModText}
+          getSkillId={this.getSkillId}
+          show={this.isPageVisible("fightertree")}
+        />
+        <SkillTreeClericPage
+          skilltree={this.props.skilltree}
+          getSkillIndex={this.getSkillIndex}
+          handleSkillPoint={this.handleSkillPoint}
+          checkAllSkillDeps={this.checkAllSkillDeps}
+          getSkillPoints={this.getSkillPoints}
+          getSkillItemModText={this.getSkillItemModText}
+          getSkillId={this.getSkillId}
+          show={this.isPageVisible("clerictree")}
         />
       </div>
     );

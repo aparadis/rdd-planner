@@ -1,0 +1,168 @@
+import React from "react";
+import SkillButton from "./skillbutton";
+import SkillText from "./skilltext";
+
+const SkillTreeClericLore = props => {
+  return (
+    <table className="table w-auto">
+      <tbody>
+        <tr>
+          <td className="table-dark">LV1</td>
+          <td></td>
+          <td>
+            <SkillText
+              skillname="lore"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("lore")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td className="table-dark">LV3</td>
+          <td>
+            <SkillText
+              skillname="forage"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("forage")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td className="table-dark">LV5</td>
+          <td>
+            <SkillText
+              skillname="cook"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("cook")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+          <td>
+            <SkillText
+              skillname="perceive"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("perceive")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+        </tr>
+        <tr>
+          <td className="table-dark">LV10</td>
+          <td>
+            <SkillText
+              skillname="brew"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("brew")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+          <td>
+            <SkillText
+              skillname="iron_will"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("iron_will")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+        </tr>
+        <tr>
+          <td className="table-dark">LV15</td>
+          <td></td>
+          <td></td>
+          <td>
+            <SkillText
+              skillname="meditate"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("meditate")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+        </tr>
+        <tr>
+          <td className="table-dark">LV20</td>
+          <td></td>
+          <td></td>
+          <td>
+            <SkillText
+              skillname="trinket"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("trinket")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  );
+};
+
+export default SkillTreeClericLore;
