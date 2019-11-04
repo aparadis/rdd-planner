@@ -30,6 +30,7 @@ class StatBlock extends Component {
           className="form-control"
           onBlur={this.handleStatUpdate}
           ref={this.inputRef}
+          disabled
         ></input>
         <button
           onClick={this.handleIncrement}
