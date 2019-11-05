@@ -4,8 +4,6 @@ Equip items handling
     Non-skill mods on items (charSheet stats, life/mana?)
 AddItem modal
     Finish stat mods
-Add Rogue skilltree + page
-Add check for skillpoints assignation on skills with multiple dependencies
 Add handling for race bonuses (+stats or +skill)
 Add handling for gender bonuses
 Complete charSheet page to better mimic paper sheet
@@ -20,3 +18,5 @@ Finish SkillText in Knowledge skills page
 Basic equip/un-Equip
 Add Fighter skilltree + page
 Add Cleric skilltree + page
+Add Rogue skilltree + page
+Add check for skillpoints assignation on skills with multiple dependencies

@@ -6,8 +6,6 @@ class CharSheetUtils extends Component {
   }
 
   static getStatFromCharSheet(charSheet, statType) {
-    console.log("getStatFromCharSheet: " + statType);
-
     if (statType === "STR") return +charSheet.str;
     if (statType === "INT") return +charSheet.int;
     if (statType === "DEX") return +charSheet.dex;

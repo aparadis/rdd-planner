@@ -136,7 +136,6 @@ class ItemAddModel extends Component {
         label: this.props.skilltree[idx].label
       });
     }
-    console.log(skills);
     this.setState({ skillSuggestions: skills });
   };
 
