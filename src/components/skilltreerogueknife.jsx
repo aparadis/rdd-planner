@@ -1,21 +1,16 @@
 import React from "react";
 import SkillButton from "./skillbutton";
-import ReactTooltip from "react-tooltip";
 import SkillText from "./skilltext";
 
-const SkillTreeMageKnowledge = props => {
+const SkillTreeRogueKnife = props => {
   return (
     <table className="table w-auto">
       <tbody>
         <tr>
           <td className="table-dark">LV1</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
           <td>
             <SkillText
-              skillname="knowledge"
+              skillname="climb"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -24,29 +19,54 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("knowledge")}
+              skilltreeindex={props.getSkillIndex("climb")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
           <td></td>
           <td></td>
+          <td>
+            <SkillText
+              skillname="hide"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("hide")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
           <td></td>
           <td></td>
+          <td>
+            <SkillText
+              skillname="knife"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("knife")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
           <td></td>
         </tr>
         <tr>
           <td className="table-dark">LV3</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
           <td>
             <SkillText
-              skillname="research"
+              skillname="jump"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -55,20 +75,69 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("research")}
+              skilltreeindex={props.getSkillIndex("jump")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
           <td></td>
           <td></td>
+          <td>
+            <SkillText
+              skillname="sneak"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("sneak")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+          <td></td>
+          <td>
+            <SkillText
+              skillname="shoot"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("shoot")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+          <td>
+            <SkillText
+              skillname="kendo"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("kendo")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
         </tr>
+
         <tr>
           <td className="table-dark">LV5</td>
-          <td></td>
           <td>
             <SkillText
-              skillname="sharp_mind"
+              skillname="dodge"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -77,17 +146,31 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("sharp_mind")}
+              skilltreeindex={props.getSkillIndex("dodge")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+          <td>
+            <SkillText
+              skillname="stab"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("stab")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
           <td></td>
-          <td></td>
-          <td></td>
           <td>
             <SkillText
-              skillname="herbalism"
+              skillname="luck"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -96,15 +179,15 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("herbalism")}
+              skilltreeindex={props.getSkillIndex("luck")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
-          <td></td>
+
           <td>
             <SkillText
-              skillname="decipher"
+              skillname="fish"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -113,7 +196,23 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("decipher")}
+              skilltreeindex={props.getSkillIndex("fish")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+          <td>
+            <SkillText
+              skillname="dual"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("dual")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
@@ -121,9 +220,9 @@ const SkillTreeMageKnowledge = props => {
         </tr>
         <tr>
           <td className="table-dark">LV10</td>
-          <td className="table-primary">
+          <td>
             <SkillText
-              skillname="energy"
+              skillname="escape"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -132,15 +231,17 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("energy")}
+              skilltreeindex={props.getSkillIndex("escape")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
           <td></td>
-          <td className="table-primary">
+          <td></td>
+          <td></td>
+          <td className="table-success">
             <SkillText
-              skillname="elemental"
+              skillname="steal"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -149,7 +250,7 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("elemental")}
+              skilltreeindex={props.getSkillIndex("steal")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
@@ -158,28 +259,12 @@ const SkillTreeMageKnowledge = props => {
           <td></td>
           <td></td>
           <td></td>
-          <td>
-            <SkillText
-              skillname="identify"
-              skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
-              getSkillPoints={props.getSkillPoints}
-              getSkillId={props.getSkillId}
-            />
-          </td>
-          <td>
-            <SkillButton
-              skilltreeindex={props.getSkillIndex("identify")}
-              checkAllSkillDeps={props.checkAllSkillDeps}
-              handleSkillPoint={props.handleSkillPoint}
-            />
-          </td>
         </tr>
         <tr>
           <td className="table-dark">LV15</td>
-          <td className="table-primary">
+          <td className="table-danger">
             <SkillText
-              skillname="osmose"
+              skillname="ninjutsu"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -188,15 +273,16 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("osmose")}
+              skilltreeindex={props.getSkillIndex("ninjutsu")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
           <td></td>
-          <td className="table-primary">
+          <td></td>
+          <td className="table-success">
             <SkillText
-              skillname="blood"
+              skillname="gold"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -205,15 +291,14 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("blood")}
+              skilltreeindex={props.getSkillIndex("gold")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
-          <td></td>
-          <td style={{ backgroundColor: "#EE82EE" }}>
+          <td className="table-success">
             <SkillText
-              skillname="alchemy"
+              skillname="treasure"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -222,7 +307,7 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("alchemy")}
+              skilltreeindex={props.getSkillIndex("treasure")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
@@ -230,7 +315,7 @@ const SkillTreeMageKnowledge = props => {
           <td></td>
           <td className="table-danger">
             <SkillText
-              skillname="enchant"
+              skillname="wushu"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -239,7 +324,7 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("enchant")}
+              skilltreeindex={props.getSkillIndex("wushu")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
@@ -247,9 +332,11 @@ const SkillTreeMageKnowledge = props => {
         </tr>
         <tr>
           <td className="table-dark">LV20</td>
-          <td className="table-primary">
+          <td></td>
+          <td></td>
+          <td className="table-success">
             <SkillText
-              skillname="forcefield"
+              skillname="kill"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -258,21 +345,33 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("forcefield")}
+              skilltreeindex={props.getSkillIndex("kill")}
+              checkAllSkillDeps={props.checkAllSkillDeps}
+              handleSkillPoint={props.handleSkillPoint}
+            />
+          </td>
+          <td></td>
+          <td className="table-success">
+            <SkillText
+              skillname="loot"
+              skilltree={props.skilltree}
+              getSkillItemModText={props.getSkillItemModText}
+              getSkillPoints={props.getSkillPoints}
+              getSkillId={props.getSkillId}
+            />
+          </td>
+          <td>
+            <SkillButton
+              skilltreeindex={props.getSkillIndex("loot")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
           <td></td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td className="table-danger">
+          <td className="table-success">
             <SkillText
-              skillname="disenchant"
+              skillname="catch"
               skilltree={props.skilltree}
               getSkillItemModText={props.getSkillItemModText}
               getSkillPoints={props.getSkillPoints}
@@ -281,7 +380,7 @@ const SkillTreeMageKnowledge = props => {
           </td>
           <td>
             <SkillButton
-              skilltreeindex={props.getSkillIndex("disenchant")}
+              skilltreeindex={props.getSkillIndex("catch")}
               checkAllSkillDeps={props.checkAllSkillDeps}
               handleSkillPoint={props.handleSkillPoint}
             />
@@ -292,4 +391,4 @@ const SkillTreeMageKnowledge = props => {
   );
 };
 
-export default SkillTreeMageKnowledge;
+export default SkillTreeRogueKnife;

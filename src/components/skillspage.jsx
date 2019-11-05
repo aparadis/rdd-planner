@@ -3,6 +3,7 @@ import CharSheetUtils from "../utils/charsheetutils";
 import SkillTreeMagePage from "./skilltreemagepage";
 import SkillTreeFighterPage from "./skilltreefighterpage";
 import SkillTreeClericPage from "./skilltreeclericpage";
+import SkillTreeRoguePage from "./skilltreeroguepage";
 import { Nav } from "react-bootstrap";
 
 class SkillsPage extends Component {
@@ -83,6 +84,16 @@ class SkillsPage extends Component {
           getSkillItemModText={this.getSkillItemModText}
           getSkillId={this.getSkillId}
           show={this.isPageVisible("clerictree")}
+        />
+        <SkillTreeRoguePage
+          skilltree={this.props.skilltree}
+          getSkillIndex={this.getSkillIndex}
+          handleSkillPoint={this.handleSkillPoint}
+          checkAllSkillDeps={this.checkAllSkillDeps}
+          getSkillPoints={this.getSkillPoints}
+          getSkillItemModText={this.getSkillItemModText}
+          getSkillId={this.getSkillId}
+          show={this.isPageVisible("roguetree")}
         />
       </div>
     );
@@ -261,6 +272,22 @@ class SkillsPage extends Component {
   checkSkillDep = skilltreeindex => {
     if (this.props.skilltree[skilltreeindex].level > 1) {
       let skilldepends = this.props.skilltree[skilltreeindex].depends;
+
+      // Some skill dependencies can be met from more than 1 skill.
+      // Ex: Cure can be enabled by choosing either Water or Light
+      var skillfound = false;
+      if (skilldepends.constructor === Array) {
+        for (const idx in this.props.skilltree) {
+          if (skilldepends.includes(this.props.skilltree[idx].id)) {
+            if (this.props.skilltree[idx].points >= 1) {
+              skillfound = true;
+            }
+          }
+        }
+        if (skillfound) return true;
+        else return false;
+      }
+
       for (const idx in this.props.skilltree) {
         if (this.props.skilltree[idx].id === skilldepends) {
           if (this.props.skilltree[idx].points >= 1) {

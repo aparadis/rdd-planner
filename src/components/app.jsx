@@ -465,7 +465,7 @@ class App extends Component {
         label: "Berserk",
         points: 0,
         level: 15,
-        depends: 59
+        depends: [59, 56]
       },
       {
         id: 61,
@@ -504,7 +504,14 @@ class App extends Component {
         level: 5,
         depends: 66
       },
-      { id: 70, name: "cure", label: "Cure", points: 0, level: 5, depends: 66 },
+      {
+        id: 70,
+        name: "cure",
+        label: "Cure",
+        points: 0,
+        level: 5,
+        depends: [66, 67]
+      },
       { id: 71, name: "rain", label: "Rain", points: 0, level: 5, depends: 67 },
       {
         id: 72,
@@ -675,8 +682,259 @@ class App extends Component {
         points: 0,
         level: 20,
         depends: 93
+      },
+      {
+        id: 95,
+        name: "climb",
+        label: "Climb",
+        points: 0,
+        level: 1,
+        depends: 0
+      },
+      { id: 96, name: "hide", label: "Hide", points: 0, level: 1, depends: 0 },
+      {
+        id: 97,
+        name: "knife",
+        label: "Knife",
+        points: 0,
+        level: 1,
+        depends: 0
+      },
+      {
+        id: 98,
+        name: "listen",
+        label: "Listen",
+        points: 0,
+        level: 1,
+        depends: 0
+      },
+      { id: 99, name: "jump", label: "Jump", points: 0, level: 3, depends: 95 },
+      {
+        id: 101,
+        name: "sneak",
+        label: "Sneak",
+        points: 0,
+        level: 3,
+        depends: 96
+      },
+      {
+        id: 102,
+        name: "shoot",
+        label: "Shoot",
+        points: 0,
+        level: 3,
+        depends: 97
+      },
+      {
+        id: 103,
+        name: "kendo",
+        label: "Kendo",
+        points: 0,
+        level: 3,
+        depends: 97
+      },
+      {
+        id: 104,
+        name: "search",
+        label: "Search",
+        points: 0,
+        level: 3,
+        depends: 98
+      },
+      {
+        id: 105,
+        name: "dodge",
+        label: "Dodge",
+        points: 0,
+        level: 5,
+        depends: 99
+      },
+      {
+        id: 106,
+        name: "stab",
+        label: "Stab",
+        points: 0,
+        level: 5,
+        depends: 101
+      },
+      {
+        id: 107,
+        name: "luck",
+        label: "Luck",
+        points: 0,
+        level: 5,
+        depends: 101
+      },
+      {
+        id: 108,
+        name: "fish",
+        label: "Fish",
+        points: 0,
+        level: 5,
+        depends: 102
+      },
+      {
+        id: 109,
+        name: "dual",
+        label: "Dual",
+        points: 0,
+        level: 5,
+        depends: 103
+      },
+      {
+        id: 110,
+        name: "unlock",
+        label: "Unlock",
+        points: 0,
+        level: 5,
+        depends: 104
+      },
+      {
+        id: 111,
+        name: "appraise",
+        label: "Appraise",
+        points: 0,
+        level: 5,
+        depends: 104
+      },
+      {
+        id: 112,
+        name: "seduce",
+        label: "Seduce",
+        points: 0,
+        level: 5,
+        depends: 104
+      },
+      {
+        id: 113,
+        name: "escape",
+        label: "Escape",
+        points: 0,
+        level: 10,
+        depends: 105
+      },
+      {
+        id: 114,
+        name: "steal",
+        label: "Steal",
+        points: 0,
+        level: 10,
+        depends: 107
+      },
+      {
+        id: 115,
+        name: "trap",
+        label: "Trap",
+        points: 0,
+        level: 10,
+        depends: 110
+      },
+      {
+        id: 116,
+        name: "bluff",
+        label: "Bluff",
+        points: 0,
+        level: 10,
+        depends: 111
+      },
+      {
+        id: 117,
+        name: "sing",
+        label: "Sing",
+        points: 0,
+        level: 10,
+        depends: 112
+      },
+      {
+        id: 118,
+        name: "ninjutsu",
+        label: "Ninjutsu",
+        points: 0,
+        level: 15,
+        depends: [113, 106]
+      },
+      {
+        id: 119,
+        name: "gold",
+        label: "Gold",
+        points: 0,
+        level: 15,
+        depends: 114
+      },
+      {
+        id: 120,
+        name: "treasure",
+        label: "Treasure",
+        points: 0,
+        level: 15,
+        depends: [114, 108]
+      },
+      {
+        id: 121,
+        name: "wushu",
+        label: "Wushu",
+        points: 0,
+        level: 15,
+        depends: 109
+      },
+      {
+        id: 122,
+        name: "forgery",
+        label: "Forgery",
+        points: 0,
+        level: 15,
+        depends: 115
+      },
+      {
+        id: 123,
+        name: "bargain",
+        label: "Bargain",
+        points: 0,
+        level: 15,
+        depends: 116
+      },
+      {
+        id: 124,
+        name: "music",
+        label: "Music",
+        points: 0,
+        level: 15,
+        depends: 117
+      },
+      {
+        id: 125,
+        name: "kill",
+        label: "Kill",
+        points: 0,
+        level: 20,
+        depends: 106
+      },
+      {
+        id: 126,
+        name: "loot",
+        label: "Loot",
+        points: 0,
+        level: 20,
+        depends: [119, 120]
+      },
+      {
+        id: 127,
+        name: "catch",
+        label: "Catch",
+        points: 0,
+        level: 20,
+        depends: 121
+      },
+      {
+        id: 128,
+        name: "craft",
+        label: "Craft",
+        points: 0,
+        level: 20,
+        depends: 122
       }
     ],
+
     showCharSheetPage: 1,
     showItemsPage: 0,
     showSkillsPage: 0
@@ -710,7 +968,7 @@ class App extends Component {
     //https://api.jsonbin.io/b/5dbbaac6318745432d31136f
     //https://api.myjson.com/bins/t21ys
     this.showCharSheetPage();
-    fetch("https://api.jsonbin.io/b/5dbcf55cf9f7965e778aa979/1")
+    fetch("https://api.jsonbin.io/b/5dbcf55cf9f7965e778aa979/2")
       .then(response => response.json())
       .then(data => this.setState({ ...data }));
   };
@@ -765,7 +1023,6 @@ class App extends Component {
             skilltree={this.state.skilltree}
             itemslist={this.state.itemslist}
           />
-          {console.log(JSON.stringify(this.state))}
           <br />
           <button className="btn btn-primary" onClick={() => this.loadState()}>
             Test load state HTTP

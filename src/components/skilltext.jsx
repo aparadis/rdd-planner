@@ -7,7 +7,10 @@ const SkillText = props => {
     <span data-tip={props.getSkillItemModText(props.skillname)}>
       <ReactTooltip effect="solid" html={true} />
       {ShowLabel(props)}
-      &nbsp;({props.getSkillPoints(props.skillname)})
+      &nbsp;
+      <span className="badge badge-secondary">
+        {props.getSkillPoints(props.skillname)}
+      </span>
     </span>
   );
 };
