@@ -4,9 +4,12 @@ import SkillsPage from "./skillspage";
 
 const SkillText = props => {
   return (
-    <span data-tip={props.getSkillItemModText(props.skillname)}>
+    <span
+      className="text-left"
+      data-tip={props.getSkillItemModText(props.skillname)}
+    >
       <ReactTooltip effect="solid" html={true} />
-      {ShowLabel(props)}
+      <span className="font-weight-light">{ShowLabel(props)}</span>
       &nbsp;
       <span className="badge badge-secondary">
         {props.getSkillPoints(props.skillname)}
@@ -22,7 +25,7 @@ const ShowLabel = props => {
     props.getSkillId(props.skillname)
   );
   if (props.getSkillItemModText(props.skillname) !== "")
-    return <b className="text-primary">{label}</b>;
+    return <b className="font-weight-bold text-primary">{label}</b>;
   return label;
 };
 

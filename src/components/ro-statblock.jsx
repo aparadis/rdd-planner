@@ -8,33 +8,12 @@ class RoStatBlock extends Component {
         <input
           type="text"
           className="form-control"
-          value={this.getModFromCharSheet(this.props.statType)}
+          value={this.props.value}
           style={{ width: 50 }}
           disabled
         ></input>
       </div>
     );
-  }
-
-  getModFromCharSheet(statType) {
-    if (statType === "STR") {
-      return Math.floor((this.props.charSheet.str - 10) / 2);
-    }
-    if (statType === "INT") {
-      return Math.floor((this.props.charSheet.int - 10) / 2);
-    }
-    if (statType === "DEX") {
-      return Math.floor((this.props.charSheet.dex - 10) / 2);
-    }
-    if (statType === "WIS") {
-      return Math.floor((this.props.charSheet.wis - 10) / 2);
-    }
-    if (statType === "CON") {
-      return Math.floor((this.props.charSheet.con - 10) / 2);
-    }
-    if (statType === "CHA") {
-      return Math.floor((this.props.charSheet.cha - 10) / 2);
-    }
   }
 }
 

@@ -4,7 +4,7 @@ import SkillText from "./skilltext";
 
 const SkillTreeClericPray = props => {
   return (
-    <table className="table w-auto">
+    <table className="table" style={{ width: 1200 }}>
       <tbody>
         <tr>
           <td className="table-dark">LV1</td>

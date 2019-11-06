@@ -100,7 +100,6 @@ class SkillsPage extends Component {
   }
 
   showPage = page => {
-    console.log(page);
     let showPageCopy = this.state.showPage;
     for (let idx in this.state.showPage) {
       if (this.state.showPage[idx].name === page) showPageCopy[idx].show = 1;
@@ -143,6 +142,7 @@ class SkillsPage extends Component {
   };
 
   getSkillItemModText = skillname => {
+    //Used for the tooltip text when hovering over a skill that has item mods
     let modpoints = 0;
     let itemmodtext = "";
     let skilltreeid = this.getSkillId(skillname);
