@@ -35,7 +35,8 @@ class App extends Component {
         itemname: "Stick of Clue",
         equipslot: "weapon",
         equipped: false,
-        mod: [{ skilltreeid: 1, value: 2 }, { skilltreeid: 3, value: 4 }]
+        mod: [{ skilltreeid: 1, value: 2 }, { skilltreeid: 3, value: 4 }],
+        statmod: [{ stat: "wis", value: 1 }, { stat: "int", value: 1 }]
       },
       {
         itemid: 2,
@@ -46,14 +47,16 @@ class App extends Component {
           { skilltreeid: 1, value: 3 },
           { skilltreeid: 7, value: 4 },
           { skilltreeid: 10, value: 2 }
-        ]
+        ],
+        statmod: []
       },
       {
         itemid: 3,
         itemname: "Gloves of Numb Fingers",
         equipslot: "glove",
         equipped: true,
-        mod: [{ skilltreeid: 1, value: 3 }, { skilltreeid: 6, value: 4 }]
+        mod: [{ skilltreeid: 1, value: 3 }, { skilltreeid: 6, value: 4 }],
+        statmod: []
       }
     ],
     skilltree: [
@@ -968,7 +971,7 @@ class App extends Component {
     //https://api.jsonbin.io/b/5dbbaac6318745432d31136f
     //https://api.myjson.com/bins/t21ys
     this.showCharSheetPage();
-    fetch("https://api.jsonbin.io/b/5dbcf55cf9f7965e778aa979/2")
+    fetch("https://api.jsonbin.io/b/5dbcf55cf9f7965e778aa979/3")
       .then(response => response.json())
       .then(data => this.setState({ ...data }));
   };
@@ -1010,6 +1013,7 @@ class App extends Component {
             show={this.state.showCharSheetPage}
             skilltree={this.state.skilltree}
             lastStatUpdate={this.state.lastStatUpdate}
+            itemslist={this.state.itemslist}
           />
           <ItemsPage
             charSheet={this.state.charSheet}

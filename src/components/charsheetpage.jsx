@@ -75,6 +75,34 @@ class CharSheetPage extends Component {
     this.setState({ charSheet: charSheetCopy });
   };
 
+  getModFromCharSheet = statType => {
+    return Math.floor((this.getTotalStat(statType) - 10) / 2);
+  };
+
+  getStatMods = statType => {
+    let modsum = 0;
+    for (let idx in this.props.itemslist) {
+      if (this.props.itemslist[idx].equipped) {
+        let curStat = statType.toLowerCase();
+        for (let idx2 in this.props.itemslist[idx].statmod) {
+          if (curStat === this.props.itemslist[idx].statmod[idx2].stat) {
+            modsum += this.props.itemslist[idx].statmod[idx2].value;
+          }
+        }
+      }
+    }
+    return modsum;
+  };
+
+  getTotalStat = statType => {
+    let curStat = CharSheetUtils.getStatFromCharSheet(
+      this.props.charSheet,
+      statType
+    );
+    let modsum = this.getStatMods(statType);
+
+    return curStat + modsum;
+  };
   render() {
     return (
       <div
@@ -121,10 +149,11 @@ class CharSheetPage extends Component {
         <table>
           <thead>
             <tr>
-              <th>Stats</th>
+              <th>Stat</th>
               <th></th>
-              <th>Rolls</th>
               <th>Bonus</th>
+              <th>Total</th>
+              <th>Roll</th>
             </tr>
           </thead>
           <tbody>
@@ -142,13 +171,24 @@ class CharSheetPage extends Component {
                 </td>
                 <td>
                   <RoStatBlock
-                    charSheet={this.props.charSheet}
+                    key={stat + "-bonus"}
                     statType={stat}
-                    key={stat + "-rolls"}
+                    value={this.getStatMods(stat)}
                   />
                 </td>
                 <td>
-                  <RoStatBlock key={stat + "-bonus"} />
+                  <RoStatBlock
+                    key={stat + "-total"}
+                    statType={stat}
+                    value={this.getTotalStat(stat)}
+                  />
+                </td>
+                <td>
+                  <RoStatBlock
+                    statType={stat}
+                    key={stat + "-rolls"}
+                    value={this.getModFromCharSheet(stat)}
+                  />
                 </td>
               </tr>
             ))}

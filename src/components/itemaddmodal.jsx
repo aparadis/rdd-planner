@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Modal } from "react-bootstrap";
 import Select from "react-select";
+import SkillsPage from "./skillspage";
 
 class ItemAddModel extends Component {
   state = {
@@ -9,14 +10,21 @@ class ItemAddModel extends Component {
     itemname: "",
     equipslot: "",
     equipped: false,
-    mod: [{}],
+    skillmods: [],
+    statmods: [],
+    statType: "",
+    statmodvalue: 0,
+    skillmodvalue: 0,
+    skillmodid: 0,
     isValidName: false,
     isValidSlot: false,
-    skillSuggestions: []
+    skillSuggestions: [],
+    statSuggestions: []
   };
 
   componentDidMount() {
     this.buildSkillSuggestions();
+    this.buildStatSuggestions();
   }
 
   render() {
@@ -73,14 +81,32 @@ class ItemAddModel extends Component {
                           className="form-control"
                           id="itemskillmods"
                           style={{ width: 50 }}
+                          value={this.state.skillmodvalue}
+                          onChange={this.handleSkillModValue}
                         ></input>
+                      </td>
+                      <td>
+                        <button
+                          className="btn btn-small btn-success"
+                          onClick={this.handleAddItemSkillMod}
+                        >
+                          +
+                        </button>
                       </td>
                     </tr>
                     <tr>
+                      <td>{this.showSkillModsList()}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <label htmlFor="itemsstatmod">Item Stat Mods:</label>
+                <table className="table">
+                  <tbody>
+                    <tr>
                       <td>
                         <Select
-                          options={this.state.skillSuggestions}
-                          onChange={this.handleSuggestion}
+                          options={this.state.statSuggestions}
+                          onChange={this.handleStatSuggestion}
                         />
                       </td>
                       <td>
@@ -89,17 +115,24 @@ class ItemAddModel extends Component {
                           className="form-control"
                           id="itemskillmods"
                           style={{ width: 50 }}
+                          value={this.state.statmodvalue}
+                          onChange={this.handleStatModValue}
                         ></input>
                       </td>
+                      <td>
+                        <button
+                          className="btn btn-small btn-success"
+                          onClick={this.handleAddItemStatMod}
+                        >
+                          +
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>{this.showStatModsList()}</td>
                     </tr>
                   </tbody>
                 </table>
-                <label htmlFor="itemstatmod">Item Stat Mods:</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="itemstatmods"
-                ></input>
               </form>
             </div>
           </Modal.Body>
@@ -123,8 +156,76 @@ class ItemAddModel extends Component {
     );
   }
 
+  showSkillModsList = () => {
+    let output = [];
+    for (let idx in this.state.skillmods) {
+      let tmpSkillLabel = SkillsPage.getSkillLabelbyId(
+        this.props.skilltree,
+        this.state.skillmods[idx].skilltreeid
+      );
+      output.push(
+        <div key={idx} className="font-weight-bold text-success">
+          {tmpSkillLabel}&nbsp; +{this.state.skillmods[idx].value}
+        </div>
+      );
+    }
+    return output;
+  };
+
+  showStatModsList = () => {
+    let output = [];
+    for (let idx in this.state.statmods) {
+      output.push(
+        <div key={idx} className="font-weight-bold text-success">
+          {this.state.statmods[idx].stat.toUpperCase()}&nbsp; +
+          {this.state.statmods[idx].value}
+        </div>
+      );
+    }
+    return output;
+  };
+
+  handleAddItemSkillMod = e => {
+    e.preventDefault();
+    let skillmodsCopy = this.state.skillmods;
+    if (this.state.skillmodvalue && this.state.skillmodid) {
+      skillmodsCopy.push({
+        skilltreeid: this.state.skillmodid,
+        value: this.state.skillmodvalue
+      });
+    }
+    console.log(skillmodsCopy);
+    this.setState({ skillmods: skillmodsCopy });
+  };
+
+  handleAddItemStatMod = e => {
+    e.preventDefault();
+    let statmodsCopy = this.state.statmods;
+    if (this.state.statmodvalue && this.state.statType) {
+      statmodsCopy.push({
+        stat: this.state.statType,
+        value: this.state.statmodvalue
+      });
+    }
+    console.log(statmodsCopy);
+    this.setState({ statmods: statmodsCopy });
+  };
+
+  handleSkillModValue = e => {
+    this.setState({ skillmodvalue: +e.target.value });
+  };
+
+  handleStatModValue = e => {
+    this.setState({ statmodvalue: +e.target.value });
+  };
+
   handleSuggestion = e => {
     console.log(e);
+    this.setState({ skillmodid: e.value });
+  };
+
+  handleStatSuggestion = e => {
+    this.setState({ statType: e.value });
   };
 
   buildSkillSuggestions = () => {
@@ -139,11 +240,36 @@ class ItemAddModel extends Component {
     this.setState({ skillSuggestions: skills });
   };
 
+  buildStatSuggestions = () => {
+    let statTypes = ["CON", "STR", "DEX", "INT", "WIS", "CHA"];
+    let stats = [];
+    for (let idx in statTypes) {
+      stats.push({
+        value: statTypes[idx].toLowerCase(),
+        label: statTypes[idx]
+      });
+    }
+    this.setState({ statSuggestions: stats });
+  };
+
   setShow = state => {
     this.setState({ show: state });
   };
 
-  handleClose = () => this.setShow(false);
+  handleClose = () => {
+    this.setState({
+      itemid: "",
+      itemname: "",
+      equipslot: "",
+      equipped: false,
+      skillmods: [],
+      statmods: [],
+      isValid: false,
+      isValidName: false,
+      isValidSlot: false
+    });
+    this.setShow(false);
+  };
 
   handleShow = () => this.setShow(true);
 
@@ -168,8 +294,9 @@ class ItemAddModel extends Component {
 
     tmpobj.itemname = this.state.itemname;
     tmpobj.equipslot = this.state.equipslot;
-
-    /*temporary until handling skill mods selection*/
+    tmpobj.mod = this.state.skillmods;
+    tmpobj.statmod = this.state.statmods;
+    /*
     tmpobj.mod = [];
 
     let tmpitemmods = {};
@@ -191,7 +318,7 @@ class ItemAddModel extends Component {
     );
     tmpitemmods.value = Math.floor(Math.random() * (1 - 4) + 4);
     tmpobj.mod.push(tmpitemmods);
-    /*temporary until handling skill mods selection*/
+    */
 
     if (this.state.isValidName && this.state.isValidSlot) {
       this.props.handleSave(tmpobj);
@@ -200,7 +327,8 @@ class ItemAddModel extends Component {
         itemname: "",
         equipslot: "",
         equipped: false,
-        mod: [{}],
+        skillmods: [],
+        statmod: [],
         isValid: false,
         isValidName: false,
         isValidSlot: false

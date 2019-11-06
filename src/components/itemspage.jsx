@@ -60,6 +60,7 @@ class ItemsPage extends Component {
             <ItemModsLabel
               skilltree={this.props.skilltree}
               mod={this.props.itemslist[idx].mod}
+              statmod={this.props.itemslist[idx].statmod}
             />
           </td>
         </tr>
