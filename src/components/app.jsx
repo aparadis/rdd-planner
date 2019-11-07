@@ -15,12 +15,7 @@ class App extends Component {
   state = {
     count: 0,
     statsList: ["CON", "STR", "DEX", "INT", "WIS", "CHA"],
-    classes: {
-      fighter: { hp: 10, mana: 0 },
-      cleric: { hp: 8, mana: 2 },
-      mage: { hp: 4, mana: 10 },
-      rogue: { hp: 8, mana: 0 }
-    },
+    classList: ["cleric", "fighter", "mage", "rogue"],
     charSheet: {
       xp: 1,
       lastxp: 0,
@@ -38,7 +33,7 @@ class App extends Component {
       {
         itemid: 1,
         itemname: "Stick of Clue",
-        equipslot: "hand",
+        equipslot: "weapon",
         equipped: false,
         mod: [{ skilltreeid: 1, value: 2 }, { skilltreeid: 3, value: 4 }],
         statmod: [{ stat: "wis", value: 1 }, { stat: "int", value: 1 }]
@@ -46,7 +41,7 @@ class App extends Component {
       {
         itemid: 2,
         itemname: "Boots of Greater Fiyaaa",
-        equipslot: "feet",
+        equipslot: "boot",
         equipped: true,
         mod: [
           { skilltreeid: 1, value: 3 },
@@ -58,7 +53,7 @@ class App extends Component {
       {
         itemid: 3,
         itemname: "Gloves of Numb Fingers",
-        equipslot: "wrist",
+        equipslot: "glove",
         equipped: true,
         mod: [{ skilltreeid: 1, value: 3 }, { skilltreeid: 6, value: 4 }],
         statmod: []

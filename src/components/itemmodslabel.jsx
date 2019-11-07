@@ -1,5 +1,6 @@
 import React from "react";
 import SkillsPage from "./skillspage";
+import { removePropertiesDeep } from "@babel/types";
 
 const ItemModsLabel = props => {
   return <>{concatMods(props)}</>;
