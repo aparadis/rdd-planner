@@ -4,10 +4,7 @@ import SkillsPage from "./skillspage";
 
 const SkillText = props => {
   return (
-    <span
-      className="text-left"
-      data-tip={props.getSkillItemModText(props.skillname)}
-    >
+    <span data-tip={props.getSkillItemModText(props.skillname)}>
       <ReactTooltip effect="solid" html={true} />
       <span className="font-weight-light">{ShowLabel(props)}</span>
       &nbsp;

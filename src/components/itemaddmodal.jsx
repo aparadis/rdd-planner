@@ -54,15 +54,16 @@ class ItemAddModel extends Component {
                   id="itemslot"
                 >
                   <option value="">Select</option>
-                  <option value="weapon">Weapon</option>
-                  <option value="shield">Shield</option>
+                  <option value="hand">Hand</option>
                   <option value="head">Head</option>
-                  <option value="cape">Cape</option>
-                  <option value="armor">Armor</option>
-                  <option value="boot">Boot</option>
+                  <option value="back">Back</option>
+                  <option value="chest">Chest</option>
+                  <option value="shoulder">Shoulder</option>
+                  <option value="feet">Feet</option>
                   <option value="glove">Glove</option>
-                  <option value="belt">Belt</option>
-                  <option value="ring">Ring</option>
+                  <option value="wrist">Wrist</option>
+                  <option value="waist">Waist</option>
+                  <option value="finger">Finger</option>
                   <option value="neck">Neck</option>
                 </select>
                 <label htmlFor="itemskillmod">Item Skill Mods:</label>
@@ -296,29 +297,6 @@ class ItemAddModel extends Component {
     tmpobj.equipslot = this.state.equipslot;
     tmpobj.mod = this.state.skillmods;
     tmpobj.statmod = this.state.statmods;
-    /*
-    tmpobj.mod = [];
-
-    let tmpitemmods = {};
-
-    tmpitemmods.skilltreeid = Math.floor(
-      Math.random() * (0 - this.props.skilltree.length + 1) +
-        this.props.skilltree.length +
-        1
-    );
-    tmpitemmods.value = Math.floor(Math.random() * (1 - 4) + 4);
-
-    tmpobj.mod.push(tmpitemmods);
-    tmpitemmods = {};
-
-    tmpitemmods.skilltreeid = Math.floor(
-      Math.random() * (0 - this.props.skilltree.length + 1) +
-        this.props.skilltree.length +
-        1
-    );
-    tmpitemmods.value = Math.floor(Math.random() * (1 - 4) + 4);
-    tmpobj.mod.push(tmpitemmods);
-    */
 
     if (this.state.isValidName && this.state.isValidSlot) {
       this.props.handleSave(tmpobj);
