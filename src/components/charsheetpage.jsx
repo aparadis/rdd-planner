@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import StatBlock from "./statblock";
 import RoStatBlock from "./ro-statblock";
 import CharSheetUtils from "../utils/charsheetutils";
+import ReactTooltip from "react-tooltip";
 
 class CharSheetPage extends Component {
   constructor(props) {
@@ -94,6 +95,26 @@ class CharSheetPage extends Component {
     return modsum;
   };
 
+  getStatItemModText = statType => {
+    let modtext = "";
+    for (let idx in this.props.itemslist) {
+      for (let idx2 in this.props.itemslist[idx].statmod) {
+        if (
+          this.props.itemslist[idx].statmod[idx2].stat.toUpperCase() ===
+            statType &&
+          this.props.itemslist[idx].equipped
+        ) {
+          modtext +=
+            this.props.itemslist[idx].itemname +
+            "+" +
+            this.props.itemslist[idx].statmod[idx2].value +
+            "<br />";
+        }
+      }
+    }
+    return modtext;
+  };
+
   getTotalStat = statType => {
     let curStat = CharSheetUtils.getStatFromCharSheet(
       this.props.charSheet,
@@ -170,11 +191,14 @@ class CharSheetPage extends Component {
                   />
                 </td>
                 <td>
-                  <RoStatBlock
-                    key={stat + "-bonus"}
-                    statType={stat}
-                    value={this.getStatMods(stat)}
-                  />
+                  <span data-tip={this.getStatItemModText(stat)}>
+                    <ReactTooltip effect="solid" html={true} place="right" />
+                    <RoStatBlock
+                      key={stat + "-bonus"}
+                      statType={stat}
+                      value={this.getStatMods(stat)}
+                    />
+                  </span>
                 </td>
                 <td>
                   <RoStatBlock
@@ -194,70 +218,6 @@ class CharSheetPage extends Component {
             ))}
           </tbody>
         </table>
-        {/*
-        <div className="row no-gutters" id="stats">
-          <div className="col no-gutters" id="stats-title">
-            <h2>Stats</h2>
-            <div className="row no-gutters">
-              <div className="col no-gutters" id="stat-block">
-                {this.state.statsList.map(stat => (
-                  <div
-                    className="row no-gutters"
-                    id="stat-row"
-                    key={stat + "div-row"}
-                  >
-                    <div className="col-4">{stat}</div>
-                    <div className="col-6 input-group">
-                      <StatBlock
-                        charSheet={this.props.charSheet}
-                        dataCallBack={this.handleIncrement}
-                        statType={stat}
-                        key={stat}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="col no-gutters" id="stats-bonus">
-            <h2>Rolls</h2>
-            <div className="col no-gutters" id="stat-block">
-              {this.state.statsList.map(stat => (
-                <div
-                  className="row no-gutters"
-                  id="stat-row"
-                  key={stat + "div-row-rolls"}
-                >
-                  <div className="col-3 input-group">
-                    <RoStatBlock
-                      charSheet={this.props.charSheet}
-                      statType={stat}
-                      key={stat + "-rolls"}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="col no-gutters" id="stats-bonus">
-            <h2>Bonus</h2>
-            <div className="col no-gutters" id="stat-block">
-              {this.state.statsList.map(stat => (
-                <div
-                  className="row no-gutters"
-                  id="stat-row"
-                  key={stat + "div-row-bonus"}
-                >
-                  <div className="col-3 input-group">
-                    <RoStatBlock key={stat + "-bonus"} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div> */}
       </div>
     );
   }
