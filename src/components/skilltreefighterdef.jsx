@@ -17,7 +17,7 @@ const SkillTreeFighterDef = props => {
             <SkillText
               skillname="defend"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -47,7 +47,7 @@ const SkillTreeFighterDef = props => {
             <SkillText
               skillname="provoke"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -66,7 +66,7 @@ const SkillTreeFighterDef = props => {
             <SkillText
               skillname="vitality"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -88,7 +88,7 @@ const SkillTreeFighterDef = props => {
             <SkillText
               skillname="shield"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -114,7 +114,7 @@ const SkillTreeFighterDef = props => {
             <SkillText
               skillname="iron_body"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -131,7 +131,7 @@ const SkillTreeFighterDef = props => {
             <SkillText
               skillname="health"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -151,7 +151,7 @@ const SkillTreeFighterDef = props => {
             <SkillText
               skillname="bash"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -173,7 +173,7 @@ const SkillTreeFighterDef = props => {
             <SkillText
               skillname="intimidate"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -211,7 +211,7 @@ const SkillTreeFighterDef = props => {
             <SkillText
               skillname="berserk"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -246,7 +246,7 @@ const SkillTreeFighterDef = props => {
             <SkillText
               skillname="die_hard"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />

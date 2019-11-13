@@ -26,7 +26,7 @@ class SkillTreeClericPage extends Component {
                   handleSkillPoint={this.props.handleSkillPoint}
                   checkAllSkillDeps={this.props.checkAllSkillDeps}
                   getSkillPoints={this.props.getSkillPoints}
-                  getSkillItemModText={this.props.getSkillItemModText}
+                  getSkillModText={this.props.getSkillModText}
                   getSkillId={this.props.getSkillId}
                 />
               </Card.Body>
@@ -47,7 +47,7 @@ class SkillTreeClericPage extends Component {
                   handleSkillPoint={this.props.handleSkillPoint}
                   checkAllSkillDeps={this.props.checkAllSkillDeps}
                   getSkillPoints={this.props.getSkillPoints}
-                  getSkillItemModText={this.props.getSkillItemModText}
+                  getSkillModText={this.props.getSkillModText}
                   getSkillId={this.props.getSkillId}
                 />
               </Card.Body>

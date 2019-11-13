@@ -12,7 +12,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="climb"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -30,7 +30,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="hide"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -48,7 +48,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="knife"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -68,7 +68,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="jump"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -86,7 +86,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="sneak"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -103,7 +103,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="shoot"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -119,7 +119,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="kendo"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -139,7 +139,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="dodge"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -155,7 +155,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="stab"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -172,7 +172,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="luck"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -189,7 +189,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="fish"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -205,7 +205,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="dual"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -224,7 +224,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="escape"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -243,7 +243,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="steal"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -266,7 +266,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="ninjutsu"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -284,7 +284,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="gold"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -300,7 +300,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="treasure"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -317,7 +317,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="wushu"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -338,7 +338,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="kill"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -355,7 +355,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="loot"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -373,7 +373,7 @@ const SkillTreeRogueKnife = props => {
             <SkillText
               skillname="catch"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />

@@ -14,7 +14,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="listen"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -43,7 +43,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="search"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -70,7 +70,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="unlock"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -86,7 +86,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="appraise"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -102,7 +102,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="seduce"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -127,7 +127,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="trap"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -143,7 +143,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="bluff"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -159,7 +159,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="sing"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -184,7 +184,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="forgery"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -200,7 +200,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="bargain"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -216,7 +216,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="music"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -241,7 +241,7 @@ const SkillTreeRogueListen = props => {
             <SkillText
               skillname="craft"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />

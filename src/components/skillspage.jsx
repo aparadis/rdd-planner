@@ -61,7 +61,7 @@ class SkillsPage extends Component {
           handleSkillPoint={this.handleSkillPoint}
           checkAllSkillDeps={this.checkAllSkillDeps}
           getSkillPoints={this.getSkillPoints}
-          getSkillItemModText={this.getSkillItemModText}
+          getSkillModText={this.getSkillModText}
           getSkillId={this.getSkillId}
           show={this.isPageVisible("magetree")}
         />
@@ -71,7 +71,7 @@ class SkillsPage extends Component {
           handleSkillPoint={this.handleSkillPoint}
           checkAllSkillDeps={this.checkAllSkillDeps}
           getSkillPoints={this.getSkillPoints}
-          getSkillItemModText={this.getSkillItemModText}
+          getSkillModText={this.getSkillModText}
           getSkillId={this.getSkillId}
           show={this.isPageVisible("fightertree")}
         />
@@ -81,7 +81,7 @@ class SkillsPage extends Component {
           handleSkillPoint={this.handleSkillPoint}
           checkAllSkillDeps={this.checkAllSkillDeps}
           getSkillPoints={this.getSkillPoints}
-          getSkillItemModText={this.getSkillItemModText}
+          getSkillModText={this.getSkillModText}
           getSkillId={this.getSkillId}
           show={this.isPageVisible("clerictree")}
         />
@@ -91,7 +91,7 @@ class SkillsPage extends Component {
           handleSkillPoint={this.handleSkillPoint}
           checkAllSkillDeps={this.checkAllSkillDeps}
           getSkillPoints={this.getSkillPoints}
-          getSkillItemModText={this.getSkillItemModText}
+          getSkillModText={this.getSkillModText}
           getSkillId={this.getSkillId}
           show={this.isPageVisible("roguetree")}
         />
@@ -136,26 +136,45 @@ class SkillsPage extends Component {
       }
     }
 
+    //Check for skill mods from race
+    let race = this.props.charSheet.race;
+    for (var idx in this.props.racesmod[race]) {
+      if (this.props.racesmod[race][idx].skilltreeid == skilltreeid) {
+        modpoints += this.props.racesmod[race][idx].value;
+      }
+    }
+
     return (
       this.props.skilltree[this.getSkillIndex(skillname)].points + modpoints
     );
   };
 
-  getSkillItemModText = skillname => {
-    //Used for the tooltip text when hovering over a skill that has item mods
+  getSkillModText = skillname => {
+    //Used for the tooltip text when hovering over a skill that has item/race mods
     let modpoints = 0;
-    let itemmodtext = "";
+    let skillmodtext = "";
     let skilltreeid = this.getSkillId(skillname);
 
+    //Check for skill mods from race
+    let race = this.props.charSheet.race;
+    for (var idx in this.props.racesmod[race]) {
+      if (this.props.racesmod[race][idx].skilltreeid == skilltreeid) {
+        if (skillmodtext !== "") skillmodtext += "<br>";
+        skillmodtext +=
+          "Racial: " + race + " (" + this.props.racesmod[race][idx].value + ")";
+      }
+    }
+
+    //Check for skill mods from items
     for (var idx in this.props.itemslist) {
       for (var idx2 in this.props.itemslist[idx].mod) {
         if (
           this.props.itemslist[idx].mod[idx2].skilltreeid === skilltreeid &&
           this.props.itemslist[idx].equipped
         ) {
-          if (itemmodtext !== "") itemmodtext += "<br>"; //More than 1 item mod found, so separate them
+          if (skillmodtext !== "") skillmodtext += "<br>"; //More than 1 item mod found, so separate them
           modpoints += this.props.itemslist[idx].mod[idx2].value;
-          itemmodtext +=
+          skillmodtext +=
             this.props.itemslist[idx].itemname +
             " (" +
             this.props.itemslist[idx].mod[idx2].value +
@@ -163,7 +182,7 @@ class SkillsPage extends Component {
         }
       }
     }
-    return itemmodtext;
+    return skillmodtext;
   };
 
   getSkillIndex = name => {

@@ -125,6 +125,12 @@ class CharSheetPage extends Component {
 
     return curStat + modsum;
   };
+
+  handleRace = e => {
+    let charSheetCopy = this.props.charSheet;
+    charSheetCopy.race = e.target.value;
+    this.setState({ charSheet: charSheetCopy });
+  };
   render() {
     return (
       <div
@@ -154,6 +160,25 @@ class CharSheetPage extends Component {
           Leveling down will reset the skill tree and stat points!
         </small>
         <br />
+        <br />
+        <div className="input-group" style={{ width: 200 }}>
+          <h3>Race:&nbsp;</h3>
+          <select
+            value={this.props.charSheet.race}
+            onChange={this.handleRace}
+            className="form-control"
+            id="race-select"
+          >
+            <option value="human">Human</option>
+            <option value="elf">Elf</option>
+            <option value="dwarf">Dwarf</option>
+            <option value="hobbit">Hobbit</option>
+            <option value="orc">Orc</option>
+            <option value="drow">Drow</option>
+            <option value="troll">Troll</option>
+            <option value="gnome">Gnome</option>
+          </select>
+        </div>
         <br />
         <h6>
           Stat Points:{" "}

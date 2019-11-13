@@ -17,7 +17,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="cast"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -37,7 +37,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="wand"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -57,7 +57,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="fire"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -75,7 +75,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="lightning"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -94,7 +94,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="ice"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -115,7 +115,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="fireball"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -133,7 +133,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="levitate"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -152,7 +152,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="ice_armor"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -173,7 +173,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="burn"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -190,7 +190,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="storm"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -207,7 +207,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="teleport"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -224,7 +224,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="ice_shield"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -245,7 +245,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="lava_blood"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -262,7 +262,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="counter"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -279,7 +279,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="portal"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -296,7 +296,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="freeze"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -317,7 +317,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="demon"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -337,7 +337,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="illusion"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -354,7 +354,7 @@ const SkillTreeMageCast = props => {
             <SkillText
               skillname="blizzard"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />

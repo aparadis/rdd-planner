@@ -12,7 +12,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="aid"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -32,7 +32,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="pray"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -50,7 +50,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="war"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -70,7 +70,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="heal"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -87,7 +87,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="light"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -104,7 +104,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="water"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -122,7 +122,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="dark"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -143,7 +143,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="bless"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -160,7 +160,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="cure"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -177,7 +177,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="rain"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -194,7 +194,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="curse"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -216,7 +216,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="banish"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -238,7 +238,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="dispel"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -258,7 +258,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="flame"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -274,7 +274,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="exorcism"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -290,7 +290,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="mass_cure"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -307,7 +307,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="summon"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -323,7 +323,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="raise"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -339,7 +339,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="leech"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -358,7 +358,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="aura"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -374,7 +374,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="holy"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -390,7 +390,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="regen"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -407,7 +407,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="acid_rain"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -423,7 +423,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="necromancy"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -439,7 +439,7 @@ const SkillTreeClericPray = props => {
             <SkillText
               skillname="force"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />

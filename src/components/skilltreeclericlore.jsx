@@ -13,7 +13,7 @@ const SkillTreeClericLore = props => {
             <SkillText
               skillname="lore"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -33,7 +33,7 @@ const SkillTreeClericLore = props => {
             <SkillText
               skillname="forage"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -54,7 +54,7 @@ const SkillTreeClericLore = props => {
             <SkillText
               skillname="cook"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -70,7 +70,7 @@ const SkillTreeClericLore = props => {
             <SkillText
               skillname="perceive"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -89,7 +89,7 @@ const SkillTreeClericLore = props => {
             <SkillText
               skillname="brew"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -105,7 +105,7 @@ const SkillTreeClericLore = props => {
             <SkillText
               skillname="iron_will"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -126,7 +126,7 @@ const SkillTreeClericLore = props => {
             <SkillText
               skillname="meditate"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />
@@ -147,7 +147,7 @@ const SkillTreeClericLore = props => {
             <SkillText
               skillname="trinket"
               skilltree={props.skilltree}
-              getSkillItemModText={props.getSkillItemModText}
+              getSkillModText={props.getSkillModText}
               getSkillPoints={props.getSkillPoints}
               getSkillId={props.getSkillId}
             />

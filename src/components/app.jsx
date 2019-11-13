@@ -15,11 +15,66 @@ class App extends Component {
   state = {
     count: 0,
     statsList: ["CON", "STR", "DEX", "INT", "WIS", "CHA"],
-    classes: {
+    classesmod: {
       fighter: { hp: 10, mana: 0 },
       cleric: { hp: 8, mana: 2 },
       mage: { hp: 4, mana: 10 },
       rogue: { hp: 8, mana: 0 }
+    },
+    racesmod: {
+      human: [
+        { skilltreeid: 62, value: 1 },
+        { skilltreeid: 3, value: 2 },
+        { skilltreeid: 40, value: 2 },
+        { skilltreeid: 88, value: 2 },
+        { skilltreeid: 114, value: 5 }
+      ],
+      elf: [
+        { skilltreeid: 37, value: 1 },
+        { skilltreeid: 98, value: 2 },
+        { skilltreeid: 101, value: 2 },
+        { skilltreeid: 24, value: 1 },
+        { skilltreeid: 124, value: 1 }
+      ],
+      dwarf: [
+        { skilltreeid: 57, value: 1 },
+        { skilltreeid: 111, value: 3 },
+        { skilltreeid: 91, value: 1 },
+        { skilltreeid: 44, value: 1 },
+        { skilltreeid: 119, value: 1 }
+      ],
+      hobbit: [
+        { skilltreeid: 104, value: 1 },
+        { skilltreeid: 89, value: 1 },
+        { skilltreeid: 107, value: 1 },
+        { skilltreeid: 108, value: 1 }
+      ],
+      orc: [
+        { skilltreeid: 38, value: 1 },
+        { skilltreeid: 53, value: 1 },
+        { skilltreeid: 58, value: 1 },
+        { skilltreeid: 59, value: 1 },
+        { skilltreeid: 60, value: 1 }
+      ],
+      drow: [
+        { skilltreeid: 63, value: 1 },
+        { skilltreeid: 82, value: 1 },
+        { skilltreeid: 101, value: 1 },
+        { skilltreeid: 68, value: 1 },
+        { skilltreeid: 109, value: 1 }
+      ],
+      troll: [
+        { skilltreeid: 56, value: 1 },
+        { skilltreeid: 93, value: 2 },
+        { skilltreeid: 115, value: 2 }
+      ],
+      gnome: [
+        { skilltreeid: 28, value: 4 },
+        { skilltreeid: 19, value: 1 },
+        { skilltreeid: 31, value: 1 },
+        { skilltreeid: 18, value: 1 },
+        { skilltreeid: 32, value: 1 }
+      ]
     },
     charSheet: {
       xp: 1,
@@ -32,7 +87,9 @@ class App extends Component {
       cha: 5,
       statpoints: 0,
       lastStatUpdate: "",
-      sp: 0
+      sp: 0,
+      race: "human",
+      class: ""
     },
     itemslist: [
       {
@@ -1031,6 +1088,7 @@ class App extends Component {
             show={this.state.showSkillsPage}
             skilltree={this.state.skilltree}
             itemslist={this.state.itemslist}
+            racesmod={this.state.racesmod}
           />
           <br />
           <button className="btn btn-primary" onClick={() => this.loadState()}>

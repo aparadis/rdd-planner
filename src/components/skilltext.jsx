@@ -4,7 +4,7 @@ import SkillsPage from "./skillspage";
 
 const SkillText = props => {
   return (
-    <span data-tip={props.getSkillItemModText(props.skillname)}>
+    <span data-tip={props.getSkillModText(props.skillname)}>
       <ReactTooltip effect="solid" html={true} />
       <span className="font-weight-light">{ShowLabel(props)}</span>
       &nbsp;
@@ -21,7 +21,7 @@ const ShowLabel = props => {
     props.skilltree,
     props.getSkillId(props.skillname)
   );
-  if (props.getSkillItemModText(props.skillname) !== "")
+  if (props.getSkillModText(props.skillname) !== "")
     return <b className="font-weight-bold text-primary">{label}</b>;
   return label;
 };
