@@ -157,8 +157,9 @@ class SkillsPage extends Component {
           modpoints += this.props.itemslist[idx].mod[idx2].value;
           itemmodtext +=
             this.props.itemslist[idx].itemname +
-            " +" +
-            this.props.itemslist[idx].mod[idx2].value;
+            " (" +
+            this.props.itemslist[idx].mod[idx2].value +
+            ")";
         }
       }
     }
@@ -274,17 +275,17 @@ class SkillsPage extends Component {
       let skilldepends = this.props.skilltree[skilltreeindex].depends;
 
       // Some skill dependencies can be met from more than 1 skill.
-      // Ex: Cure can be enabled by choosing either Water or Light
-      var skillfound = false;
+      // Ex: Cure can be enabled by choosing Water and Light
+      var skillfound = 0;
       if (skilldepends.constructor === Array) {
         for (const idx in this.props.skilltree) {
           if (skilldepends.includes(this.props.skilltree[idx].id)) {
             if (this.props.skilltree[idx].points >= 1) {
-              skillfound = true;
+              skillfound += 1;
             }
           }
         }
-        if (skillfound) return true;
+        if (skillfound === skilldepends.length) return true;
         else return false;
       }
 
