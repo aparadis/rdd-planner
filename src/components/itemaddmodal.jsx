@@ -78,10 +78,10 @@ class ItemAddModel extends Component {
                       </td>
                       <td>
                         <input
-                          type="text"
+                          type="number"
                           className="form-control"
                           id="itemskillmods"
-                          style={{ width: 50 }}
+                          style={{ width: 65 }}
                           value={this.state.skillmodvalue}
                           onChange={this.handleSkillModValue}
                         ></input>
@@ -112,10 +112,10 @@ class ItemAddModel extends Component {
                       </td>
                       <td>
                         <input
-                          type="text"
+                          type="number"
                           className="form-control"
                           id="itemskillmods"
-                          style={{ width: 50 }}
+                          style={{ width: 65 }}
                           value={this.state.statmodvalue}
                           onChange={this.handleStatModValue}
                         ></input>
@@ -166,7 +166,7 @@ class ItemAddModel extends Component {
       );
       output.push(
         <div key={idx} className="font-weight-bold text-success">
-          {tmpSkillLabel}&nbsp; +{this.state.skillmods[idx].value}
+          {tmpSkillLabel}&nbsp; {this.state.skillmods[idx].value}
         </div>
       );
     }
@@ -178,7 +178,7 @@ class ItemAddModel extends Component {
     for (let idx in this.state.statmods) {
       output.push(
         <div key={idx} className="font-weight-bold text-success">
-          {this.state.statmods[idx].stat.toUpperCase()}&nbsp; +
+          {this.state.statmods[idx].stat.toUpperCase()}&nbsp;
           {this.state.statmods[idx].value}
         </div>
       );

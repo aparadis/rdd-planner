@@ -106,8 +106,9 @@ class CharSheetPage extends Component {
         ) {
           modtext +=
             this.props.itemslist[idx].itemname +
-            "+" +
+            " (" +
             this.props.itemslist[idx].statmod[idx2].value +
+            ")" +
             "<br />";
         }
       }

@@ -39,9 +39,9 @@ class App extends Component {
         itemid: 1,
         itemname: "Stick of Clue",
         equipslot: "hand",
-        equipped: false,
+        equipped: true,
         mod: [{ skilltreeid: 1, value: 2 }, { skilltreeid: 3, value: 4 }],
-        statmod: [{ stat: "wis", value: 1 }, { stat: "int", value: 1 }]
+        statmod: [{ stat: "wis", value: -1 }, { stat: "int", value: 1 }]
       },
       {
         itemid: 2,
