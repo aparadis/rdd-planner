@@ -82,6 +82,16 @@ class CharSheetPage extends Component {
 
   getStatMods = statType => {
     let modsum = 0;
+
+    //Check for gender bonuses
+    let gender = this.props.charSheet.gender;
+    for (let idx in this.props.gendermod[gender]) {
+      if (this.props.gendermod[gender][idx].stat.toUpperCase() === statType) {
+        modsum += this.props.gendermod[gender][idx].value;
+      }
+    }
+
+    //Check for item bonuses
     for (let idx in this.props.itemslist) {
       if (this.props.itemslist[idx].equipped) {
         let curStat = statType.toLowerCase();
@@ -95,8 +105,24 @@ class CharSheetPage extends Component {
     return modsum;
   };
 
-  getStatItemModText = statType => {
+  getStatModText = statType => {
     let modtext = "";
+
+    //Check for gender bonuses
+    let gender = this.props.charSheet.gender;
+    for (let idx in this.props.gendermod[gender]) {
+      if (this.props.gendermod[gender][idx].stat.toUpperCase() === statType) {
+        if (modtext !== "") modtext += "<br>";
+        modtext +=
+          "Gender: " +
+          gender +
+          " (" +
+          this.props.gendermod[gender][idx].value +
+          ")";
+      }
+    }
+
+    //Check for item bonuses
     for (let idx in this.props.itemslist) {
       for (let idx2 in this.props.itemslist[idx].statmod) {
         if (
@@ -104,6 +130,7 @@ class CharSheetPage extends Component {
             statType &&
           this.props.itemslist[idx].equipped
         ) {
+          if (modtext !== "") modtext += "<br>";
           modtext +=
             this.props.itemslist[idx].itemname +
             " (" +
@@ -129,8 +156,57 @@ class CharSheetPage extends Component {
   handleRace = e => {
     let charSheetCopy = this.props.charSheet;
     charSheetCopy.race = e.target.value;
+    switch (charSheetCopy.race) {
+      case "human":
+        charSheetCopy.sp += 2;
+        break;
+      case "elf":
+        charSheetCopy.specialPower = "Darkvision";
+        break;
+      case "dwarf":
+        charSheetCopy.statpoints += 2;
+        break;
+      case "hobbit":
+        charSheetCopy.statpoints += 2;
+        break;
+      case "orc":
+        charSheetCopy.statpoints += 2;
+        break;
+      case "drow":
+        charSheetCopy.specialPower = "Darkvision";
+        break;
+      case "troll":
+        charSheetCopy.specialPower = "Regeneration";
+        break;
+      case "gnome":
+        charSheetCopy.statpoints += 2;
+        break;
+    }
     this.setState({ charSheet: charSheetCopy });
   };
+
+  handleGender = e => {
+    let charSheetCopy = this.props.charSheet;
+    charSheetCopy.gender = e.target.value;
+    this.setState({ charSheet: charSheetCopy });
+  };
+
+  showRace = () => {
+    let race =
+      this.props.charSheet.race.charAt(0).toUpperCase() +
+      this.props.charSheet.race.slice(1);
+    return race;
+  };
+
+  showPower = () => {
+    let output = [];
+    if (this.props.charSheet.specialPower) {
+      output.push(<h6>Power:&nbsp;</h6>);
+      output.push(<small>{this.props.charSheet.specialPower}</small>);
+    }
+    return <div className="input-group">{output}</div>;
+  };
+
   render() {
     return (
       <div
@@ -139,7 +215,7 @@ class CharSheetPage extends Component {
         id="stats-title"
       >
         <div className="row no-gutters" id="level-title">
-          <h3>
+          <h4>
             <br />
             <div className="input-group">
               XP:&nbsp;
@@ -147,36 +223,55 @@ class CharSheetPage extends Component {
                 type="text"
                 defaultValue={this.props.charSheet.xp}
                 style={{ width: 100 }}
-                className="form-control"
+                className="form-control form-control-sm"
                 onBlur={this.handleXpUpdate}
                 ref={this.inputXpRef}
               ></input>
               &nbsp;(Level:{" "}
               {CharSheetUtils.getLevelFromXP(this.props.charSheet)})
             </div>
-          </h3>
+          </h4>
         </div>
         <small className="text-muted">
           Leveling down will reset the skill tree and stat points!
         </small>
         <br />
         <br />
-        <div className="input-group" style={{ width: 200 }}>
-          <h3>Race:&nbsp;</h3>
+        <h4>
+          <div className="input-group" style={{ width: 220 }}>
+            Race:&nbsp;
+            {this.props.charSheet.race === "" && (
+              <select
+                value={this.props.charSheet.race}
+                onChange={this.handleRace}
+                className="form-control form-control-sm"
+                id="race-select"
+              >
+                <option value="">Select..</option>
+                <option value="human">Human</option>
+                <option value="elf">Elf</option>
+                <option value="dwarf">Dwarf</option>
+                <option value="hobbit">Hobbit</option>
+                <option value="orc">Orc</option>
+                <option value="drow">Drow</option>
+                <option value="troll">Troll</option>
+                <option value="gnome">Gnome</option>
+              </select>
+            )}
+            {this.showRace()}
+          </div>
+        </h4>
+        {this.showPower()}
+        <div className="input-group" style={{ width: 220 }}>
+          <h4>Gender:&nbsp;</h4>
           <select
-            value={this.props.charSheet.race}
-            onChange={this.handleRace}
-            className="form-control"
-            id="race-select"
+            value={this.props.charSheet.gender}
+            onChange={this.handleGender}
+            className="form-control form-control-sm"
+            id="gender-select"
           >
-            <option value="human">Human</option>
-            <option value="elf">Elf</option>
-            <option value="dwarf">Dwarf</option>
-            <option value="hobbit">Hobbit</option>
-            <option value="orc">Orc</option>
-            <option value="drow">Drow</option>
-            <option value="troll">Troll</option>
-            <option value="gnome">Gnome</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
           </select>
         </div>
         <br />
@@ -217,7 +312,7 @@ class CharSheetPage extends Component {
                   />
                 </td>
                 <td>
-                  <span data-tip={this.getStatItemModText(stat)}>
+                  <span data-tip={this.getStatModText(stat)}>
                     <ReactTooltip effect="solid" html={true} place="right" />
                     <RoStatBlock
                       key={stat + "-bonus"}

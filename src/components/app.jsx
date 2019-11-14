@@ -72,8 +72,22 @@ class App extends Component {
         { skilltreeid: 28, value: 4 },
         { skilltreeid: 19, value: 1 },
         { skilltreeid: 31, value: 1 },
-        { skilltreeid: 18, value: 1 },
+        { skilltreeid: 128, value: 1 },
         { skilltreeid: 32, value: 1 }
+      ]
+    },
+    gendermod: {
+      female: [
+        { stat: "dex", value: 1 },
+        { stat: "wis", value: 1 },
+        { stat: "con", value: -1 },
+        { stat: "str", value: -1 }
+      ],
+      male: [
+        { stat: "dex", value: -1 },
+        { stat: "wis", value: -1 },
+        { stat: "con", value: 1 },
+        { stat: "str", value: 1 }
       ]
     },
     charSheet: {
@@ -88,8 +102,10 @@ class App extends Component {
       statpoints: 0,
       lastStatUpdate: "",
       sp: 0,
-      race: "human",
-      class: ""
+      race: "",
+      class: "",
+      gender: "male",
+      specialPower: ""
     },
     itemslist: [
       {
@@ -97,8 +113,14 @@ class App extends Component {
         itemname: "Stick of Clue",
         equipslot: "hand",
         equipped: true,
-        mod: [{ skilltreeid: 1, value: 2 }, { skilltreeid: 3, value: 4 }],
-        statmod: [{ stat: "wis", value: -1 }, { stat: "int", value: 1 }]
+        mod: [
+          { skilltreeid: 1, value: 2 },
+          { skilltreeid: 3, value: 4 }
+        ],
+        statmod: [
+          { stat: "wis", value: -1 },
+          { stat: "int", value: 1 }
+        ]
       },
       {
         itemid: 2,
@@ -117,7 +139,10 @@ class App extends Component {
         itemname: "Gloves of Numb Fingers",
         equipslot: "wrist",
         equipped: true,
-        mod: [{ skilltreeid: 1, value: 3 }, { skilltreeid: 6, value: 4 }],
+        mod: [
+          { skilltreeid: 1, value: 3 },
+          { skilltreeid: 6, value: 4 }
+        ],
         statmod: []
       }
     ],
@@ -1076,6 +1101,7 @@ class App extends Component {
             skilltree={this.state.skilltree}
             lastStatUpdate={this.state.lastStatUpdate}
             itemslist={this.state.itemslist}
+            gendermod={this.state.gendermod}
           />
           <ItemsPage
             charSheet={this.state.charSheet}
