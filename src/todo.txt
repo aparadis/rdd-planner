@@ -1,12 +1,10 @@
 Partial/Full Set items bonuses handling
 Equip items handling
     Validations for double-equip same gear type
-    Non-skill mods on items (charSheet stats, life/mana?)
+    Non-skill mods on items (life/mana)
 Add classes
     HP base
-    Class determination when assigning first skill points
-Add handling for race bonuses (+stats or +skill)
-Add handling for gender bonuses
+    Prestige classes
 Complete charSheet page to better mimic paper sheet
 
 
@@ -23,3 +21,7 @@ Add Rogue skilltree + page
 Add check for skillpoints assignation on skills with multiple dependencies
 AddItem modal
     Finish stat mods
+Class determination when assigning first skill points
+    Non-skill mods on items (charSheet stats)
+Add handling for race bonuses (+stats or +skill)
+Add handling for gender bonuses
