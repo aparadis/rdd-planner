@@ -215,7 +215,9 @@ class CharSheetPage extends Component {
         this.props.charSheet.class[idx].charAt(0).toUpperCase() +
         this.props.charSheet.class[idx].slice(1);
     }
-    return classtext;
+    if (classtext === "")
+      return <small className="text-muted">Assign first skill</small>;
+    else return classtext;
   };
 
   render() {
@@ -248,7 +250,7 @@ class CharSheetPage extends Component {
         </small>
         <br />
         <br />
-        <div className="input-group" style={{ width: 220 }}>
+        <div className="input-group">
           <h4>
             Class:&nbsp;
             {this.showClass()}
