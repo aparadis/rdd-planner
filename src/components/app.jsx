@@ -103,7 +103,7 @@ class App extends Component {
       lastStatUpdate: "",
       sp: 0,
       race: "",
-      class: "",
+      class: [],
       gender: "male",
       specialPower: ""
     },
@@ -148,33 +148,68 @@ class App extends Component {
     ],
     skilltree: [
       /*Mage skills*/
-      { id: 1, name: "cast", label: "Cast", points: 0, level: 1, depends: 0 },
-      { id: 2, name: "wand", label: "Wand", points: 0, level: 1, depends: 0 },
+      {
+        id: 1,
+        name: "cast",
+        label: "Cast",
+        points: 0,
+        level: 1,
+        depends: 0,
+        class: "mage"
+      },
+      {
+        id: 2,
+        name: "wand",
+        label: "Wand",
+        points: 0,
+        level: 1,
+        depends: 0,
+        class: "mage"
+      },
       {
         id: 3,
         name: "knowledge",
         label: "Knowledge",
         points: 0,
         level: 1,
-        depends: 0
+        depends: 0,
+        class: "mage"
       },
-      { id: 4, name: "fire", label: "Fire", points: 0, level: 3, depends: 1 },
+      {
+        id: 4,
+        name: "fire",
+        label: "Fire",
+        points: 0,
+        level: 3,
+        depends: 1,
+        class: "mage"
+      },
       {
         id: 5,
         name: "lightning",
         label: "Lightning",
         points: 0,
         level: 3,
-        depends: 1
+        depends: 1,
+        class: "mage"
       },
-      { id: 6, name: "ice", label: "Ice", points: 0, level: 3, depends: 1 },
+      {
+        id: 6,
+        name: "ice",
+        label: "Ice",
+        points: 0,
+        level: 3,
+        depends: 1,
+        class: "mage"
+      },
       {
         id: 7,
         name: "fireball",
         label: "Fireball",
         points: 0,
         level: 5,
-        depends: 4
+        depends: 4,
+        class: "mage"
       },
       {
         id: 8,
@@ -182,7 +217,8 @@ class App extends Component {
         label: "Levitate",
         points: 0,
         level: 5,
-        depends: 5
+        depends: 5,
+        class: "mage"
       },
       {
         id: 9,
@@ -190,16 +226,26 @@ class App extends Component {
         label: "Ice Armor",
         points: 0,
         level: 5,
-        depends: 6
+        depends: 6,
+        class: "mage"
       },
-      { id: 10, name: "burn", label: "Burn", points: 0, level: 10, depends: 7 },
+      {
+        id: 10,
+        name: "burn",
+        label: "Burn",
+        points: 0,
+        level: 10,
+        depends: 7,
+        class: "mage"
+      },
       {
         id: 11,
         name: "storm",
         label: "Storm",
         points: 0,
         level: 10,
-        depends: 5
+        depends: 5,
+        class: "mage"
       },
       {
         id: 12,
@@ -207,7 +253,8 @@ class App extends Component {
         label: "Teleport",
         points: 0,
         level: 10,
-        depends: 8
+        depends: 8,
+        class: "mage"
       },
       {
         id: 13,
@@ -215,7 +262,8 @@ class App extends Component {
         label: "Ice Shield",
         points: 0,
         level: 10,
-        depends: 9
+        depends: 9,
+        class: "mage"
       },
       {
         id: 14,
@@ -223,7 +271,8 @@ class App extends Component {
         label: "Lava Blood",
         points: 0,
         level: 15,
-        depends: 10
+        depends: 10,
+        class: "mage"
       },
       {
         id: 15,
@@ -231,7 +280,8 @@ class App extends Component {
         label: "Counter",
         points: 0,
         level: 15,
-        depends: 11
+        depends: 11,
+        class: "mage"
       },
       {
         id: 16,
@@ -239,7 +289,8 @@ class App extends Component {
         label: "Portal",
         points: 0,
         level: 15,
-        depends: 12
+        depends: 12,
+        class: "mage"
       },
       {
         id: 17,
@@ -247,7 +298,8 @@ class App extends Component {
         label: "Freeze",
         points: 0,
         level: 15,
-        depends: 13
+        depends: 13,
+        class: "mage"
       },
       {
         id: 18,
@@ -255,7 +307,8 @@ class App extends Component {
         label: "Demon",
         points: 0,
         level: 20,
-        depends: 14
+        depends: 14,
+        class: "mage"
       },
       {
         id: 19,
@@ -263,7 +316,8 @@ class App extends Component {
         label: "Illusion",
         points: 0,
         level: 20,
-        depends: 16
+        depends: 16,
+        class: "mage"
       },
       {
         id: 20,
@@ -271,7 +325,8 @@ class App extends Component {
         label: "Blizzard",
         points: 0,
         level: 20,
-        depends: 17
+        depends: 17,
+        class: "mage"
       },
       {
         id: 22,
@@ -279,7 +334,8 @@ class App extends Component {
         label: "Research",
         points: 0,
         level: 3,
-        depends: 3
+        depends: 3,
+        class: "mage"
       },
       {
         id: 23,
@@ -287,7 +343,8 @@ class App extends Component {
         label: "Sharp Mind",
         points: 0,
         level: 5,
-        depends: 3
+        depends: 3,
+        class: "mage"
       },
       {
         id: 24,
@@ -295,7 +352,8 @@ class App extends Component {
         label: "Herbalism",
         points: 0,
         level: 5,
-        depends: 22
+        depends: 22,
+        class: "mage"
       },
       {
         id: 25,
@@ -303,7 +361,8 @@ class App extends Component {
         label: "Decipher",
         points: 0,
         level: 5,
-        depends: 22
+        depends: 22,
+        class: "mage"
       },
       {
         id: 26,
@@ -311,7 +370,8 @@ class App extends Component {
         label: "Energy",
         points: 0,
         level: 10,
-        depends: 23
+        depends: 23,
+        class: "mage"
       },
       {
         id: 27,
@@ -319,7 +379,8 @@ class App extends Component {
         label: "Elemental",
         points: 0,
         level: 10,
-        depends: 23
+        depends: 23,
+        class: "mage"
       },
       {
         id: 28,
@@ -327,7 +388,8 @@ class App extends Component {
         label: "Identify",
         points: 0,
         level: 10,
-        depends: 25
+        depends: 25,
+        class: "mage"
       },
       {
         id: 29,
@@ -335,7 +397,8 @@ class App extends Component {
         label: "Osmose",
         points: 0,
         level: 15,
-        depends: 26
+        depends: 26,
+        class: "mage"
       },
       {
         id: 30,
@@ -343,7 +406,8 @@ class App extends Component {
         label: "Blood",
         points: 0,
         level: 15,
-        depends: 27
+        depends: 27,
+        class: "mage"
       },
       {
         id: 31,
@@ -351,7 +415,8 @@ class App extends Component {
         label: "Alchemy",
         points: 0,
         level: 15,
-        depends: 24
+        depends: 24,
+        class: "mage"
       },
       {
         id: 32,
@@ -359,7 +424,8 @@ class App extends Component {
         label: "Enchant",
         points: 0,
         level: 15,
-        depends: 28
+        depends: 28,
+        class: "mage"
       },
       {
         id: 33,
@@ -367,7 +433,8 @@ class App extends Component {
         label: "Forcefield",
         points: 0,
         level: 20,
-        depends: 29
+        depends: 29,
+        class: "mage"
       },
       {
         id: 34,
@@ -375,7 +442,8 @@ class App extends Component {
         label: "Disenchant",
         points: 0,
         level: 20,
-        depends: 32
+        depends: 32,
+        class: "mage"
       },
       {
         id: 35,
@@ -383,7 +451,8 @@ class App extends Component {
         label: "Hammer",
         points: 0,
         level: 1,
-        depends: 0
+        depends: 0,
+        class: "fighter"
       },
       {
         id: 36,
@@ -391,7 +460,8 @@ class App extends Component {
         label: "Sword",
         points: 0,
         level: 1,
-        depends: 0
+        depends: 0,
+        class: "fighter"
       },
       {
         id: 37,
@@ -399,25 +469,44 @@ class App extends Component {
         label: "Archery",
         points: 0,
         level: 1,
-        depends: 0
+        depends: 0,
+        class: "fighter"
       },
-      { id: 38, name: "axe", label: "Axe", points: 0, level: 3, depends: 35 },
+      {
+        id: 38,
+        name: "axe",
+        label: "Axe",
+        points: 0,
+        level: 3,
+        depends: 35,
+        class: "fighter"
+      },
       {
         id: 39,
         name: "spear",
         label: "Spear",
         points: 0,
         level: 3,
-        depends: 36
+        depends: 36,
+        class: "fighter"
       },
-      { id: 40, name: "hunt", label: "Hunt", points: 0, level: 3, depends: 37 },
+      {
+        id: 40,
+        name: "hunt",
+        label: "Hunt",
+        points: 0,
+        level: 3,
+        depends: 37,
+        class: "fighter"
+      },
       {
         id: 41,
         name: "melee",
         label: "Melee",
         points: 0,
         level: 5,
-        depends: 39
+        depends: 39,
+        class: "fighter"
       },
       {
         id: 42,
@@ -425,16 +514,26 @@ class App extends Component {
         label: "Track",
         points: 0,
         level: 5,
-        depends: 40
+        depends: 40,
+        class: "fighter"
       },
-      { id: 43, name: "aim", label: "Aim", points: 0, level: 5, depends: 37 },
+      {
+        id: 43,
+        name: "aim",
+        label: "Aim",
+        points: 0,
+        level: 5,
+        depends: 37,
+        class: "fighter"
+      },
       {
         id: 44,
         name: "mine",
         label: "Mine",
         points: 0,
         level: 10,
-        depends: 38
+        depends: 38,
+        class: "fighter"
       },
       {
         id: 45,
@@ -442,7 +541,8 @@ class App extends Component {
         label: "Injure",
         points: 0,
         level: 10,
-        depends: 41
+        depends: 41,
+        class: "fighter"
       },
       {
         id: 46,
@@ -450,7 +550,8 @@ class App extends Component {
         label: "Pierce",
         points: 0,
         level: 10,
-        depends: 43
+        depends: 43,
+        class: "fighter"
       },
       {
         id: 47,
@@ -458,7 +559,8 @@ class App extends Component {
         label: "Cleave",
         points: 0,
         level: 15,
-        depends: 45
+        depends: 45,
+        class: "fighter"
       },
       {
         id: 48,
@@ -466,7 +568,8 @@ class App extends Component {
         label: "Stun",
         points: 0,
         level: 15,
-        depends: 45
+        depends: 45,
+        class: "fighter"
       },
       {
         id: 49,
@@ -474,7 +577,8 @@ class App extends Component {
         label: "Stack",
         points: 0,
         level: 15,
-        depends: 46
+        depends: 46,
+        class: "fighter"
       },
       {
         id: 50,
@@ -482,7 +586,8 @@ class App extends Component {
         label: "Smith",
         points: 0,
         level: 20,
-        depends: 47
+        depends: 47,
+        class: "fighter"
       },
       {
         id: 51,
@@ -490,7 +595,8 @@ class App extends Component {
         label: "Volley",
         points: 0,
         level: 20,
-        depends: 49
+        depends: 49,
+        class: "fighter"
       },
       {
         id: 52,
@@ -498,7 +604,8 @@ class App extends Component {
         label: "Defend",
         points: 0,
         level: 1,
-        depends: 0
+        depends: 0,
+        class: "fighter"
       },
       {
         id: 53,
@@ -506,7 +613,8 @@ class App extends Component {
         label: "Provoke",
         points: 0,
         level: 3,
-        depends: 52
+        depends: 52,
+        class: "fighter"
       },
       {
         id: 54,
@@ -514,7 +622,8 @@ class App extends Component {
         label: "Vitality",
         points: 0,
         level: 3,
-        depends: 52
+        depends: 52,
+        class: "fighter"
       },
       {
         id: 55,
@@ -522,7 +631,8 @@ class App extends Component {
         label: "Shield",
         points: 0,
         level: 3,
-        depends: 52
+        depends: 52,
+        class: "fighter"
       },
       {
         id: 56,
@@ -530,7 +640,8 @@ class App extends Component {
         label: "Iron Body",
         points: 0,
         level: 5,
-        depends: 54
+        depends: 54,
+        class: "fighter"
       },
       {
         id: 57,
@@ -538,16 +649,26 @@ class App extends Component {
         label: "Health",
         points: 0,
         level: 5,
-        depends: 54
+        depends: 54,
+        class: "fighter"
       },
-      { id: 58, name: "bash", label: "Bash", points: 0, level: 5, depends: 55 },
+      {
+        id: 58,
+        name: "bash",
+        label: "Bash",
+        points: 0,
+        level: 5,
+        depends: 55,
+        class: "fighter"
+      },
       {
         id: 59,
         name: "intimidate",
         label: "Intimidate",
         points: 0,
         level: 10,
-        depends: 53
+        depends: 53,
+        class: "fighter"
       },
       {
         id: 60,
@@ -555,7 +676,8 @@ class App extends Component {
         label: "Berserk",
         points: 0,
         level: 15,
-        depends: [59, 56]
+        depends: [59, 56],
+        class: "fighter"
       },
       {
         id: 61,
@@ -563,19 +685,53 @@ class App extends Component {
         label: "Die Hard",
         points: 0,
         level: 20,
-        depends: 60
+        depends: 60,
+        class: "fighter"
       },
-      { id: 62, name: "aid", label: "Aid", points: 0, level: 1, depends: 0 },
-      { id: 63, name: "pray", label: "Pray", points: 0, level: 1, depends: 0 },
-      { id: 64, name: "war", label: "War", points: 0, level: 1, depends: 0 },
-      { id: 65, name: "heal", label: "Heal", points: 0, level: 3, depends: 62 },
+      {
+        id: 62,
+        name: "aid",
+        label: "Aid",
+        points: 0,
+        level: 1,
+        depends: 0,
+        class: "cleric"
+      },
+      {
+        id: 63,
+        name: "pray",
+        label: "Pray",
+        points: 0,
+        level: 1,
+        depends: 0,
+        class: "cleric"
+      },
+      {
+        id: 64,
+        name: "war",
+        label: "War",
+        points: 0,
+        level: 1,
+        depends: 0,
+        class: "cleric"
+      },
+      {
+        id: 65,
+        name: "heal",
+        label: "Heal",
+        points: 0,
+        level: 3,
+        depends: 62,
+        class: "cleric"
+      },
       {
         id: 66,
         name: "light",
         label: "Light",
         points: 0,
         level: 3,
-        depends: 63
+        depends: 63,
+        class: "cleric"
       },
       {
         id: 67,
@@ -583,16 +739,26 @@ class App extends Component {
         label: "Water",
         points: 0,
         level: 3,
-        depends: 63
+        depends: 63,
+        class: "cleric"
       },
-      { id: 68, name: "dark", label: "Dark", points: 0, level: 3, depends: 63 },
+      {
+        id: 68,
+        name: "dark",
+        label: "Dark",
+        points: 0,
+        level: 3,
+        depends: 63,
+        class: "cleric"
+      },
       {
         id: 69,
         name: "bless",
         label: "Bless",
         points: 0,
         level: 5,
-        depends: 66
+        depends: 66,
+        class: "cleric"
       },
       {
         id: 70,
@@ -600,16 +766,26 @@ class App extends Component {
         label: "Cure",
         points: 0,
         level: 5,
-        depends: [66, 67]
+        depends: [66, 67],
+        class: "cleric"
       },
-      { id: 71, name: "rain", label: "Rain", points: 0, level: 5, depends: 67 },
+      {
+        id: 71,
+        name: "rain",
+        label: "Rain",
+        points: 0,
+        level: 5,
+        depends: 67,
+        class: "cleric"
+      },
       {
         id: 72,
         name: "curse",
         label: "Curse",
         points: 0,
         level: 5,
-        depends: 68
+        depends: 68,
+        class: "cleric"
       },
       {
         id: 73,
@@ -617,7 +793,8 @@ class App extends Component {
         label: "Banish",
         points: 0,
         level: 10,
-        depends: 69
+        depends: 69,
+        class: "cleric"
       },
       {
         id: 74,
@@ -625,7 +802,8 @@ class App extends Component {
         label: "Dispel",
         points: 0,
         level: 10,
-        depends: 72
+        depends: 72,
+        class: "cleric"
       },
       {
         id: 75,
@@ -633,7 +811,8 @@ class App extends Component {
         label: "Flame",
         points: 0,
         level: 15,
-        depends: 69
+        depends: 69,
+        class: "cleric"
       },
       {
         id: 76,
@@ -641,7 +820,8 @@ class App extends Component {
         label: "Exorcism",
         points: 0,
         level: 15,
-        depends: 73
+        depends: 73,
+        class: "cleric"
       },
       {
         id: 77,
@@ -649,7 +829,8 @@ class App extends Component {
         label: "Mass Cure",
         points: 0,
         level: 15,
-        depends: 70
+        depends: 70,
+        class: "cleric"
       },
       {
         id: 78,
@@ -657,7 +838,8 @@ class App extends Component {
         label: "Summon",
         points: 0,
         level: 15,
-        depends: 71
+        depends: 71,
+        class: "cleric"
       },
       {
         id: 79,
@@ -665,7 +847,8 @@ class App extends Component {
         label: "Raise",
         points: 0,
         level: 15,
-        depends: 74
+        depends: 74,
+        class: "cleric"
       },
       {
         id: 80,
@@ -673,7 +856,8 @@ class App extends Component {
         label: "Leech",
         points: 0,
         level: 15,
-        depends: 74
+        depends: 74,
+        class: "cleric"
       },
       {
         id: 81,
@@ -681,7 +865,8 @@ class App extends Component {
         label: "Aura",
         points: 0,
         level: 20,
-        depends: 75
+        depends: 75,
+        class: "cleric"
       },
       {
         id: 82,
@@ -689,7 +874,8 @@ class App extends Component {
         label: "Holy",
         points: 0,
         level: 20,
-        depends: 76
+        depends: 76,
+        class: "cleric"
       },
       {
         id: 83,
@@ -697,7 +883,8 @@ class App extends Component {
         label: "Regen",
         points: 0,
         level: 20,
-        depends: 77
+        depends: 77,
+        class: "cleric"
       },
       {
         id: 84,
@@ -705,7 +892,8 @@ class App extends Component {
         label: "Acid Rain",
         points: 0,
         level: 20,
-        depends: 78
+        depends: 78,
+        class: "cleric"
       },
       {
         id: 85,
@@ -713,7 +901,8 @@ class App extends Component {
         label: "Necromancy",
         points: 0,
         level: 20,
-        depends: 79
+        depends: 79,
+        class: "cleric"
       },
       {
         id: 86,
@@ -721,25 +910,44 @@ class App extends Component {
         label: "Force",
         points: 0,
         level: 20,
-        depends: 80
+        depends: 80,
+        class: "cleric"
       },
-      { id: 87, name: "lore", label: "Lore", points: 0, level: 1, depends: 0 },
+      {
+        id: 87,
+        name: "lore",
+        label: "Lore",
+        points: 0,
+        level: 1,
+        depends: 0,
+        class: "cleric"
+      },
       {
         id: 88,
         name: "forage",
         label: "Forage",
         points: 0,
         level: 3,
-        depends: 87
+        depends: 87,
+        class: "cleric"
       },
-      { id: 89, name: "cook", label: "Cook", points: 0, level: 5, depends: 88 },
+      {
+        id: 89,
+        name: "cook",
+        label: "Cook",
+        points: 0,
+        level: 5,
+        depends: 88,
+        class: "cleric"
+      },
       {
         id: 90,
         name: "perceive",
         label: "Perceive",
         points: 0,
         level: 5,
-        depends: 87
+        depends: 87,
+        class: "cleric"
       },
       {
         id: 91,
@@ -747,7 +955,8 @@ class App extends Component {
         label: "Brew",
         points: 0,
         level: 10,
-        depends: 89
+        depends: 89,
+        class: "cleric"
       },
       {
         id: 92,
@@ -755,7 +964,8 @@ class App extends Component {
         label: "Iron Will",
         points: 0,
         level: 10,
-        depends: 90
+        depends: 90,
+        class: "cleric"
       },
       {
         id: 93,
@@ -763,7 +973,8 @@ class App extends Component {
         label: "Meditate",
         points: 0,
         level: 15,
-        depends: 92
+        depends: 92,
+        class: "cleric"
       },
       {
         id: 94,
@@ -771,7 +982,8 @@ class App extends Component {
         label: "Trinket",
         points: 0,
         level: 20,
-        depends: 93
+        depends: 93,
+        class: "cleric"
       },
       {
         id: 95,
@@ -779,16 +991,26 @@ class App extends Component {
         label: "Climb",
         points: 0,
         level: 1,
-        depends: 0
+        depends: 0,
+        class: "rogue"
       },
-      { id: 96, name: "hide", label: "Hide", points: 0, level: 1, depends: 0 },
+      {
+        id: 96,
+        name: "hide",
+        label: "Hide",
+        points: 0,
+        level: 1,
+        depends: 0,
+        class: "rogue"
+      },
       {
         id: 97,
         name: "knife",
         label: "Knife",
         points: 0,
         level: 1,
-        depends: 0
+        depends: 0,
+        class: "rogue"
       },
       {
         id: 98,
@@ -796,16 +1018,26 @@ class App extends Component {
         label: "Listen",
         points: 0,
         level: 1,
-        depends: 0
+        depends: 0,
+        class: "rogue"
       },
-      { id: 99, name: "jump", label: "Jump", points: 0, level: 3, depends: 95 },
+      {
+        id: 99,
+        name: "jump",
+        label: "Jump",
+        points: 0,
+        level: 3,
+        depends: 95,
+        class: "rogue"
+      },
       {
         id: 101,
         name: "sneak",
         label: "Sneak",
         points: 0,
         level: 3,
-        depends: 96
+        depends: 96,
+        class: "rogue"
       },
       {
         id: 102,
@@ -813,7 +1045,8 @@ class App extends Component {
         label: "Shoot",
         points: 0,
         level: 3,
-        depends: 97
+        depends: 97,
+        class: "rogue"
       },
       {
         id: 103,
@@ -821,7 +1054,8 @@ class App extends Component {
         label: "Kendo",
         points: 0,
         level: 3,
-        depends: 97
+        depends: 97,
+        class: "rogue"
       },
       {
         id: 104,
@@ -829,7 +1063,8 @@ class App extends Component {
         label: "Search",
         points: 0,
         level: 3,
-        depends: 98
+        depends: 98,
+        class: "rogue"
       },
       {
         id: 105,
@@ -837,7 +1072,8 @@ class App extends Component {
         label: "Dodge",
         points: 0,
         level: 5,
-        depends: 99
+        depends: 99,
+        class: "rogue"
       },
       {
         id: 106,
@@ -845,7 +1081,8 @@ class App extends Component {
         label: "Stab",
         points: 0,
         level: 5,
-        depends: 101
+        depends: 101,
+        class: "rogue"
       },
       {
         id: 107,
@@ -853,7 +1090,8 @@ class App extends Component {
         label: "Luck",
         points: 0,
         level: 5,
-        depends: 101
+        depends: 101,
+        class: "rogue"
       },
       {
         id: 108,
@@ -861,7 +1099,8 @@ class App extends Component {
         label: "Fish",
         points: 0,
         level: 5,
-        depends: 102
+        depends: 102,
+        class: "rogue"
       },
       {
         id: 109,
@@ -869,7 +1108,8 @@ class App extends Component {
         label: "Dual",
         points: 0,
         level: 5,
-        depends: 103
+        depends: 103,
+        class: "rogue"
       },
       {
         id: 110,
@@ -877,7 +1117,8 @@ class App extends Component {
         label: "Unlock",
         points: 0,
         level: 5,
-        depends: 104
+        depends: 104,
+        class: "rogue"
       },
       {
         id: 111,
@@ -885,7 +1126,8 @@ class App extends Component {
         label: "Appraise",
         points: 0,
         level: 5,
-        depends: 104
+        depends: 104,
+        class: "rogue"
       },
       {
         id: 112,
@@ -893,7 +1135,8 @@ class App extends Component {
         label: "Seduce",
         points: 0,
         level: 5,
-        depends: 104
+        depends: 104,
+        class: "rogue"
       },
       {
         id: 113,
@@ -901,7 +1144,8 @@ class App extends Component {
         label: "Escape",
         points: 0,
         level: 10,
-        depends: 105
+        depends: 105,
+        class: "rogue"
       },
       {
         id: 114,
@@ -909,7 +1153,8 @@ class App extends Component {
         label: "Steal",
         points: 0,
         level: 10,
-        depends: 107
+        depends: 107,
+        class: "rogue"
       },
       {
         id: 115,
@@ -917,7 +1162,8 @@ class App extends Component {
         label: "Trap",
         points: 0,
         level: 10,
-        depends: 110
+        depends: 110,
+        class: "rogue"
       },
       {
         id: 116,
@@ -925,7 +1171,8 @@ class App extends Component {
         label: "Bluff",
         points: 0,
         level: 10,
-        depends: 111
+        depends: 111,
+        class: "rogue"
       },
       {
         id: 117,
@@ -933,7 +1180,8 @@ class App extends Component {
         label: "Sing",
         points: 0,
         level: 10,
-        depends: 112
+        depends: 112,
+        class: "rogue"
       },
       {
         id: 118,
@@ -941,7 +1189,8 @@ class App extends Component {
         label: "Ninjutsu",
         points: 0,
         level: 15,
-        depends: [113, 106]
+        depends: [113, 106],
+        class: "rogue"
       },
       {
         id: 119,
@@ -949,7 +1198,8 @@ class App extends Component {
         label: "Gold",
         points: 0,
         level: 15,
-        depends: 114
+        depends: 114,
+        class: "rogue"
       },
       {
         id: 120,
@@ -957,7 +1207,8 @@ class App extends Component {
         label: "Treasure",
         points: 0,
         level: 15,
-        depends: [114, 108]
+        depends: [114, 108],
+        class: "rogue"
       },
       {
         id: 121,
@@ -965,7 +1216,8 @@ class App extends Component {
         label: "Wushu",
         points: 0,
         level: 15,
-        depends: 109
+        depends: 109,
+        class: "rogue"
       },
       {
         id: 122,
@@ -973,7 +1225,8 @@ class App extends Component {
         label: "Forgery",
         points: 0,
         level: 15,
-        depends: 115
+        depends: 115,
+        class: "rogue"
       },
       {
         id: 123,
@@ -981,7 +1234,8 @@ class App extends Component {
         label: "Bargain",
         points: 0,
         level: 15,
-        depends: 116
+        depends: 116,
+        class: "rogue"
       },
       {
         id: 124,
@@ -989,7 +1243,8 @@ class App extends Component {
         label: "Music",
         points: 0,
         level: 15,
-        depends: 117
+        depends: 117,
+        class: "rogue"
       },
       {
         id: 125,
@@ -997,7 +1252,8 @@ class App extends Component {
         label: "Kill",
         points: 0,
         level: 20,
-        depends: 106
+        depends: 106,
+        class: "rogue"
       },
       {
         id: 126,
@@ -1005,7 +1261,8 @@ class App extends Component {
         label: "Loot",
         points: 0,
         level: 20,
-        depends: [119, 120]
+        depends: [119, 120],
+        class: "rogue"
       },
       {
         id: 127,
@@ -1013,7 +1270,8 @@ class App extends Component {
         label: "Catch",
         points: 0,
         level: 20,
-        depends: 121
+        depends: 121,
+        class: "rogue"
       },
       {
         id: 128,
@@ -1021,7 +1279,8 @@ class App extends Component {
         label: "Craft",
         points: 0,
         level: 20,
-        depends: 122
+        depends: 122,
+        class: "rogue"
       }
     ],
 
@@ -1058,7 +1317,7 @@ class App extends Component {
     //https://api.jsonbin.io/b/5dbbaac6318745432d31136f
     //https://api.myjson.com/bins/t21ys
     this.showCharSheetPage();
-    fetch("https://api.jsonbin.io/b/5dbcf55cf9f7965e778aa979/3")
+    fetch("https://api.jsonbin.io/b/5dbcf55cf9f7965e778aa979/4")
       .then(response => response.json())
       .then(data => this.setState({ ...data }));
   };
@@ -1118,11 +1377,11 @@ class App extends Component {
           />
           <br />
           <button className="btn btn-primary" onClick={() => this.loadState()}>
-            Test load state HTTP
+            Reset from HTTP
           </button>
           &nbsp;
           <button className="btn btn-primary" onClick={() => this.saveState()}>
-            Save state
+            Save state to console
           </button>
         </div>
       </div>
