@@ -207,6 +207,17 @@ class CharSheetPage extends Component {
     return <div className="input-group">{output}</div>;
   };
 
+  showClass = () => {
+    let classtext = "";
+    for (let idx in this.props.charSheet.class) {
+      if (classtext !== "") classtext += "/";
+      classtext +=
+        this.props.charSheet.class[idx].charAt(0).toUpperCase() +
+        this.props.charSheet.class[idx].slice(1);
+    }
+    return classtext;
+  };
+
   render() {
     return (
       <div
@@ -237,6 +248,12 @@ class CharSheetPage extends Component {
         </small>
         <br />
         <br />
+        <div className="input-group" style={{ width: 220 }}>
+          <h4>
+            Class:&nbsp;
+            {this.showClass()}
+          </h4>
+        </div>
         <h4>
           <div className="input-group" style={{ width: 220 }}>
             Race:&nbsp;

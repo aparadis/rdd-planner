@@ -333,12 +333,27 @@ class SkillsPage extends Component {
     return this.props.charSheet.sp > 0 ? true : false;
   };
 
+  checkClass = skilltreeindex => {
+    //Once we are dual classed, we cannot add skillpoints to trees other than those classes
+    if (this.props.charSheet.class.length === 2) {
+      if (
+        !this.props.charSheet.class.includes(
+          this.props.skilltree[skilltreeindex].class
+        )
+      )
+        return false;
+      else return true;
+    }
+    return true;
+  };
+
   checkAllSkillDeps = skilltreeindex => {
     let currentlvl = CharSheetUtils.getLevelFromXP(this.props.charSheet);
     let levelreq = false;
     let skilldep = false;
     let maxskill = false;
     let enoughsp = false;
+    let allowedclass = false;
 
     this.checkSkillLevelReq(skilltreeindex, currentlvl)
       ? (levelreq = true)
@@ -352,8 +367,28 @@ class SkillsPage extends Component {
 
     this.checkEnoughSp() ? (enoughsp = true) : (enoughsp = false); //this.setState({ enoughspalert: 1 });
 
-    if (levelreq && skilldep && maxskill && enoughsp) return true;
+    this.checkClass(skilltreeindex)
+      ? (allowedclass = true)
+      : (allowedclass = false);
+
+    if (levelreq && skilldep && maxskill && enoughsp && allowedclass)
+      return true;
     else return false;
+  };
+
+  setClass = charclass => {
+    let charSheetCopy = this.props.charSheet;
+
+    if (charSheetCopy.class.length == 0) {
+      charSheetCopy.class.push(charclass);
+    } else if (
+      !charSheetCopy.class.includes(charclass) &&
+      charSheetCopy.class.length < 2
+    )
+      //Allow dual classes, but not higher
+      charSheetCopy.class.push(charclass);
+
+    this.setState({ charSheet: charSheetCopy });
   };
 
   handleSkillPoint = skilltreeindex => {
@@ -363,6 +398,8 @@ class SkillsPage extends Component {
       let skilltreecopy = this.props.skilltree;
       skilltreecopy[skilltreeindex].points += 1;
       this.setState({ skilltree: skilltreecopy });
+
+      this.setClass(skilltreecopy[skilltreeindex].class);
 
       let charSheetCopy = this.props.charSheet;
       charSheetCopy.sp -= 1;
