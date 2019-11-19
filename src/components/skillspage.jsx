@@ -333,7 +333,48 @@ class SkillsPage extends Component {
     return this.props.charSheet.sp > 0 ? true : false;
   };
 
+  getClassFromSkillId = skilltreeid => {
+    for (let idx in this.props.skilltree) {
+      if (this.props.skilltree[idx].id === skilltreeid)
+        return this.props.skilltree[idx].class;
+    }
+  };
+
   checkClass = skilltreeindex => {
+    //Can only be assigned 1 prestige class
+    if (this.havePrestigeClass()) {
+      let curprestigeclass = this.props.charSheet.class[0];
+      if (this.isPrestigeSkill(skilltreeindex)) {
+        //This is a prestige skill, but need to know if its for
+        // our current class
+        for (let idx in this.props.prestigeclass) {
+          if (this.props.prestigeclass[idx].name === curprestigeclass) {
+            if (
+              this.props.prestigeclass[idx].skilltreeid ===
+              this.props.skilltree[skilltreeindex].id
+            )
+              return true;
+            else return false;
+          }
+        }
+      }
+      // We're a Prestige class, assigning a non-prestige skill
+      // Check if it's in the same tree
+      else {
+        for (let idx in this.props.prestigeclass) {
+          if (this.props.prestigeclass[idx].name === curprestigeclass) {
+            if (
+              this.getClassFromSkillId(
+                this.props.prestigeclass[idx].skilltreeid
+              ) === this.props.skilltree[skilltreeindex].class
+            ) {
+              return true;
+            } else return false;
+          }
+        }
+      }
+    }
+
     //Once we are dual classed, we cannot add skillpoints to trees other than those classes
     if (this.props.charSheet.class.length === 2) {
       if (
@@ -347,6 +388,17 @@ class SkillsPage extends Component {
     return true;
   };
 
+  isPrestigeSkill = skilltreeindex => {
+    for (let idx in this.props.prestigeclass) {
+      if (
+        this.props.prestigeclass[idx].skilltreeid ===
+        this.props.skilltree[skilltreeindex].id
+      )
+        return true;
+    }
+
+    return false;
+  };
   checkAllSkillDeps = skilltreeindex => {
     let currentlvl = CharSheetUtils.getLevelFromXP(this.props.charSheet);
     let levelreq = false;
@@ -376,19 +428,54 @@ class SkillsPage extends Component {
     else return false;
   };
 
-  setClass = charclass => {
+  havePrestigeClass = () => {
+    let prestigefound = false;
+    for (let idx in this.props.prestigeclass) {
+      if (
+        this.props.charSheet.class.includes(this.props.prestigeclass[idx].name)
+      ) {
+        prestigefound = true;
+      }
+    }
+    return prestigefound;
+  };
+
+  setClass = (charclass, skilltreeid, skilltreeindex) => {
     let charSheetCopy = this.props.charSheet;
 
+    //Check if we already have a prestige class assigned
+    if (!this.havePrestigeClass()) {
+      //Check if we assigning a new prestige class
+      for (let idx in this.props.prestigeclass) {
+        if (this.props.prestigeclass[idx].skilltreeid == skilltreeid) {
+          charSheetCopy.class = [this.props.prestigeclass[idx].name];
+          this.setState({ charSheet: charSheetCopy });
+          return;
+        }
+      }
+    }
+    // If we are already a prestige class, assigning a skill that is
+    // in our tree but not a prestige skill should not "dual class"
+    // us.  Ex: Assiging skill Demon (Prestige Warlock) then Wand should not
+    // assign us a "Warlock/Mage" class, so exit now to stay only "Warlock"
+    else return false;
+
+    //Check if this is our first class
     if (charSheetCopy.class.length == 0) {
       charSheetCopy.class.push(charclass);
-    } else if (
+      this.setState({ charSheet: charSheetCopy });
+      return;
+    }
+
+    //Allow dual classes, but not higher
+    if (
       !charSheetCopy.class.includes(charclass) &&
       charSheetCopy.class.length < 2
-    )
-      //Allow dual classes, but not higher
+    ) {
       charSheetCopy.class.push(charclass);
-
-    this.setState({ charSheet: charSheetCopy });
+      this.setState({ charSheet: charSheetCopy });
+      return;
+    }
   };
 
   handleSkillPoint = skilltreeindex => {
@@ -399,7 +486,11 @@ class SkillsPage extends Component {
       skilltreecopy[skilltreeindex].points += 1;
       this.setState({ skilltree: skilltreecopy });
 
-      this.setClass(skilltreecopy[skilltreeindex].class);
+      this.setClass(
+        skilltreecopy[skilltreeindex].class,
+        skilltreecopy[skilltreeindex].id,
+        skilltreeindex
+      );
 
       let charSheetCopy = this.props.charSheet;
       charSheetCopy.sp -= 1;

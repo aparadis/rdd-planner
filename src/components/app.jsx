@@ -21,6 +21,268 @@ class App extends Component {
       mage: { hp: 4, mana: 10 },
       rogue: { hp: 8, mana: 0 }
     },
+    prestigeclass: [
+      {
+        name: "warrior",
+        skilltreeid: 47,
+        skillmod: [
+          { skilltreeid: 41, value: 4 },
+          { skilltreeid: 45, value: 2 }
+        ],
+        statmod: [
+          { stat: "str", value: 2 },
+          { stat: "dex", value: 2 },
+          { stat: "cha", value: 2 }
+        ]
+      },
+      {
+        name: "priest",
+        skilltreeid: 82,
+        skillmod: [
+          { skilltreeid: 70, value: 4 },
+          { skilltreeid: 73, value: 2 }
+        ],
+        statmod: [
+          { stat: "con", value: 2 },
+          { stat: "wis", value: 2 },
+          { stat: "cha", value: 2 }
+        ]
+      },
+      {
+        name: "wizard",
+        skilltreeid: 26,
+        skillmod: [
+          { skilltreeid: 23, value: 4 },
+          { skilltreeid: 2, value: 2 }
+        ],
+        statmod: [
+          { stat: "wis", value: 2 },
+          { stat: "int", value: 2 },
+          { stat: "cha", value: 2 }
+        ]
+      },
+      {
+        name: "thief",
+        skilltreeid: 114,
+        skillmod: [
+          { skilltreeid: 110, value: 4 },
+          { skilltreeid: 107, value: 2 }
+        ],
+        statmod: [
+          { stat: "con", value: 2 },
+          { stat: "dex", value: 2 },
+          { stat: "int", value: 2 }
+        ]
+      },
+      {
+        name: "paladin",
+        skilltreeid: 75,
+        skillmod: [
+          { skilltreeid: 92, value: 4 },
+          { skilltreeid: 70, value: 2 }
+        ],
+        statmod: [
+          { stat: "str", value: 2 },
+          { stat: "wis", value: 2 },
+          { stat: "cha", value: 2 }
+        ]
+      },
+      {
+        name: "enchanter",
+        skilltreeid: 32,
+        skillmod: [
+          { skilltreeid: 28, value: 4 },
+          { skilltreeid: 25, value: 2 }
+        ],
+        statmod: [
+          { stat: "str", value: 2 },
+          { stat: "int", value: 2 },
+          { stat: "cha", value: 2 }
+        ]
+      },
+      {
+        name: "monk",
+        skilltreeid: 121,
+        skillmod: [
+          { skilltreeid: 103, value: 4 },
+          { skilltreeid: 109, value: 2 }
+        ],
+        statmod: [
+          { stat: "con", value: 2 },
+          { stat: "dex", value: 2 },
+          { stat: "wis", value: 2 }
+        ]
+      },
+      {
+        name: "alchemist",
+        skilltreeid: 31,
+        skillmod: [
+          { skilltreeid: 22, value: 4 },
+          { skilltreeid: 24, value: 2 }
+        ],
+        statmod: [
+          { stat: "dex", value: 2 },
+          { stat: "wis", value: 2 },
+          { stat: "int", value: 2 }
+        ]
+      },
+      {
+        name: "bard",
+        skilltreeid: 117,
+        skillmod: [
+          { skilltreeid: 87, value: 4 },
+          { skilltreeid: 112, value: 2 }
+        ],
+        statmod: [
+          { stat: "con", value: 2 },
+          { stat: "dex", value: 2 },
+          { stat: "cha", value: 2 }
+        ]
+      },
+      {
+        name: "mechanic",
+        skilltreeid: 128,
+        skillmod: [
+          { skilltreeid: 115, value: 4 },
+          { skilltreeid: 3, value: 2 }
+        ],
+        statmod: [
+          { stat: "str", value: 2 },
+          { stat: "dex", value: 2 },
+          { stat: "int", value: 2 }
+        ]
+      },
+      {
+        name: "barbarian",
+        skilltreeid: 60,
+        skillmod: [
+          { skilltreeid: 59, value: 4 },
+          { skilltreeid: 57, value: 2 }
+        ],
+        statmod: [
+          { stat: "con", value: 2 },
+          { stat: "str", value: 2 },
+          { stat: "dex", value: 2 }
+        ]
+      },
+      {
+        name: "summoner",
+        skilltreeid: 78,
+        skillmod: [
+          { skilltreeid: 67, value: 4 },
+          { skilltreeid: 71, value: 2 }
+        ],
+        statmod: [
+          { stat: "con", value: 2 },
+          { stat: "wis", value: 2 },
+          { stat: "int", value: 2 }
+        ]
+      },
+      {
+        name: "sorcerer",
+        skilltreeid: 27,
+        skillmod: [
+          { skilltreeid: 1, value: 4 },
+          { skilltreeid: 23, value: 2 }
+        ],
+        statmod: [
+          { stat: "str", value: 2 },
+          { stat: "wis", value: 2 },
+          { stat: "int", value: 2 }
+        ]
+      },
+      {
+        name: "assassin",
+        skilltreeid: 125,
+        skillmod: [
+          { skilltreeid: 22, value: 4 },
+          { skilltreeid: 24, value: 2 }
+        ],
+        statmod: [
+          { stat: "dex", value: 2 },
+          { stat: "wis", value: 2 },
+          { stat: "int", value: 2 }
+        ]
+      },
+      {
+        name: "dark knight",
+        skilltreeid: 80,
+        skillmod: [
+          { skilltreeid: 64, value: 4 },
+          { skilltreeid: 68, value: 2 }
+        ],
+        statmod: [
+          { stat: "con", value: 2 },
+          { stat: "str", value: 2 },
+          { stat: "cha", value: 2 }
+        ]
+      },
+      {
+        name: "warlock",
+        skilltreeid: 18,
+        skillmod: [
+          { skilltreeid: 4, value: 4 },
+          { skilltreeid: 14, value: 2 }
+        ],
+        statmod: [
+          { stat: "con", value: 2 },
+          { stat: "str", value: 2 },
+          { stat: "int", value: 2 }
+        ]
+      },
+      {
+        name: "ninja",
+        skilltreeid: 118,
+        skillmod: [
+          { skilltreeid: 99, value: 4 },
+          { skilltreeid: 101, value: 2 }
+        ],
+        statmod: [
+          { stat: "str", value: 2 },
+          { stat: "dex", value: 2 },
+          { stat: "wis", value: 2 }
+        ]
+      },
+      {
+        name: "necromancer",
+        skilltreeid: 85,
+        skillmod: [
+          { skilltreeid: 79, value: 4 },
+          { skilltreeid: 22, value: 2 }
+        ],
+        statmod: [
+          { stat: "wis", value: 2 },
+          { stat: "int", value: 2 },
+          { stat: "cha", value: 2 }
+        ]
+      },
+      {
+        name: "shaman",
+        skilltreeid: 94,
+        skillmod: [
+          { skilltreeid: 93, value: 4 },
+          { skilltreeid: 57, value: 2 }
+        ],
+        statmod: [
+          { stat: "dex", value: 2 },
+          { stat: "wis", value: 2 },
+          { stat: "cha", value: 2 }
+        ]
+      },
+      {
+        name: "illusionist",
+        skilltreeid: 19,
+        skillmod: [
+          { skilltreeid: 116, value: 4 },
+          { skilltreeid: 12, value: 2 }
+        ],
+        statmod: [
+          { stat: "dex", value: 2 },
+          { stat: "int", value: 2 },
+          { stat: "cha", value: 2 }
+        ]
+      }
+    ],
     racesmod: {
       human: [
         { skilltreeid: 62, value: 1 },
@@ -1374,6 +1636,7 @@ class App extends Component {
             skilltree={this.state.skilltree}
             itemslist={this.state.itemslist}
             racesmod={this.state.racesmod}
+            prestigeclass={this.state.prestigeclass}
           />
           <br />
           <button className="btn btn-primary" onClick={() => this.loadState()}>
