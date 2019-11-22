@@ -14,6 +14,18 @@ class CharSheetUtils extends Component {
     if (statType === "CHA") return +charSheet.cha;
   }
 
+  static showClass(charSheet) {
+    let classtext = "";
+    for (let idx in charSheet.class) {
+      if (classtext !== "") classtext += "/";
+      classtext +=
+        charSheet.class[idx].charAt(0).toUpperCase() +
+        charSheet.class[idx].slice(1);
+    }
+    if (classtext === "") return "Assign first skill";
+    else return classtext;
+  }
+
   static getLevelFromXP(charSheet) {
     //Build level list xp until lvl99
     let levelsTable = [];

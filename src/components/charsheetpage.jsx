@@ -282,7 +282,7 @@ class CharSheetPage extends Component {
         <div className="input-group">
           <h4>
             Class:&nbsp;
-            {this.showClass()}
+            {CharSheetUtils.showClass(this.props.charSheet)}
           </h4>
         </div>
         <h4>

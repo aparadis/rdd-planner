@@ -256,6 +256,8 @@ class SkillsPage extends Component {
             >
               {this.props.charSheet.sp}
             </span>
+            &nbsp;&nbsp; (Class:&nbsp;
+            <span>{CharSheetUtils.showClass(this.props.charSheet)}</span>)
           </h5>
         </div>
       </div>
@@ -511,17 +513,19 @@ class SkillsPage extends Component {
   handleSkillPoint = skilltreeindex => {
     if (this.checkAllSkillDeps(skilltreeindex)) {
       let skilltreecopy = this.props.skilltree;
-      skilltreecopy[skilltreeindex].points += 1;
-      this.setState({ skilltree: skilltreecopy });
+      let charSheetCopy = this.props.charSheet;
 
+      if (skilltreecopy[skilltreeindex].points < 20) {
+        skilltreecopy[skilltreeindex].points += 1;
+        charSheetCopy.sp -= 1;
+        this.setState({ skilltree: skilltreecopy });
+      }
       this.setClass(
         skilltreecopy[skilltreeindex].class,
         skilltreecopy[skilltreeindex].id,
         skilltreeindex
       );
 
-      let charSheetCopy = this.props.charSheet;
-      charSheetCopy.sp -= 1;
       this.setState({ charSheet: charSheetCopy });
     }
   };
