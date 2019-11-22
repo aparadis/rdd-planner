@@ -21,6 +21,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("climb")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -39,6 +40,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("hide")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -57,6 +59,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("knife")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -77,6 +80,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("jump")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -95,6 +99,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("sneak")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -112,6 +117,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("shoot")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -128,6 +134,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("kendo")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -148,6 +155,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("dodge")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -164,6 +172,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("stab")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -181,6 +190,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("luck")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -198,6 +208,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("fish")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -214,6 +225,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("dual")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -233,6 +245,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("escape")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -252,6 +265,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("steal")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -275,6 +289,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("ninjutsu")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -293,6 +308,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("gold")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -309,6 +325,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("treasure")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -326,6 +343,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("wushu")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -347,6 +365,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("kill")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -364,6 +383,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("loot")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -382,6 +402,7 @@ const SkillTreeRogueKnife = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("catch")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>

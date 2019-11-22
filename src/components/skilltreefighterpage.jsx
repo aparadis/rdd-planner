@@ -25,6 +25,7 @@ class SkillTreeFighterPage extends Component {
                   getSkillIndex={this.props.getSkillIndex}
                   handleSkillPoint={this.props.handleSkillPoint}
                   checkAllSkillDeps={this.props.checkAllSkillDeps}
+                  checkPrestigeSkill={this.props.checkPrestigeSkill}
                   getSkillPoints={this.props.getSkillPoints}
                   getSkillModText={this.props.getSkillModText}
                   getSkillId={this.props.getSkillId}
@@ -46,6 +47,7 @@ class SkillTreeFighterPage extends Component {
                   getSkillIndex={this.props.getSkillIndex}
                   handleSkillPoint={this.props.handleSkillPoint}
                   checkAllSkillDeps={this.props.checkAllSkillDeps}
+                  checkPrestigeSkill={this.props.checkPrestigeSkill}
                   getSkillPoints={this.props.getSkillPoints}
                   getSkillModText={this.props.getSkillModText}
                   getSkillId={this.props.getSkillId}

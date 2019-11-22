@@ -25,6 +25,7 @@ class App extends Component {
       {
         name: "warrior",
         skilltreeid: 47,
+        skilltreeclass: ["fighter"],
         skillmod: [
           { skilltreeid: 41, value: 4 },
           { skilltreeid: 45, value: 2 }
@@ -38,6 +39,7 @@ class App extends Component {
       {
         name: "priest",
         skilltreeid: 82,
+        skilltreeclass: ["cleric"],
         skillmod: [
           { skilltreeid: 70, value: 4 },
           { skilltreeid: 73, value: 2 }
@@ -51,6 +53,7 @@ class App extends Component {
       {
         name: "wizard",
         skilltreeid: 26,
+        skilltreeclass: ["mage"],
         skillmod: [
           { skilltreeid: 23, value: 4 },
           { skilltreeid: 2, value: 2 }
@@ -64,6 +67,7 @@ class App extends Component {
       {
         name: "thief",
         skilltreeid: 114,
+        skilltreeclass: ["rogue"],
         skillmod: [
           { skilltreeid: 110, value: 4 },
           { skilltreeid: 107, value: 2 }
@@ -77,6 +81,7 @@ class App extends Component {
       {
         name: "paladin",
         skilltreeid: 75,
+        skilltreeclass: ["fighter", "cleric"],
         skillmod: [
           { skilltreeid: 92, value: 4 },
           { skilltreeid: 70, value: 2 }
@@ -90,6 +95,7 @@ class App extends Component {
       {
         name: "enchanter",
         skilltreeid: 32,
+        skilltreeclass: ["fighter", "mage"],
         skillmod: [
           { skilltreeid: 28, value: 4 },
           { skilltreeid: 25, value: 2 }
@@ -103,6 +109,7 @@ class App extends Component {
       {
         name: "monk",
         skilltreeid: 121,
+        skilltreeclass: ["fighter", "rogue"],
         skillmod: [
           { skilltreeid: 103, value: 4 },
           { skilltreeid: 109, value: 2 }
@@ -116,6 +123,7 @@ class App extends Component {
       {
         name: "alchemist",
         skilltreeid: 31,
+        skilltreeclass: ["cleric", "mage"],
         skillmod: [
           { skilltreeid: 22, value: 4 },
           { skilltreeid: 24, value: 2 }
@@ -129,6 +137,7 @@ class App extends Component {
       {
         name: "bard",
         skilltreeid: 117,
+        skilltreeclass: ["cleric", "rogue"],
         skillmod: [
           { skilltreeid: 87, value: 4 },
           { skilltreeid: 112, value: 2 }
@@ -142,6 +151,7 @@ class App extends Component {
       {
         name: "mechanic",
         skilltreeid: 128,
+        skilltreeclass: ["mage", "rogue"],
         skillmod: [
           { skilltreeid: 115, value: 4 },
           { skilltreeid: 3, value: 2 }
@@ -155,6 +165,7 @@ class App extends Component {
       {
         name: "barbarian",
         skilltreeid: 60,
+        skilltreeclass: ["fighter"],
         skillmod: [
           { skilltreeid: 59, value: 4 },
           { skilltreeid: 57, value: 2 }
@@ -168,6 +179,7 @@ class App extends Component {
       {
         name: "summoner",
         skilltreeid: 78,
+        skilltreeclass: ["cleric"],
         skillmod: [
           { skilltreeid: 67, value: 4 },
           { skilltreeid: 71, value: 2 }
@@ -181,6 +193,7 @@ class App extends Component {
       {
         name: "sorcerer",
         skilltreeid: 27,
+        skilltreeclass: ["mage"],
         skillmod: [
           { skilltreeid: 1, value: 4 },
           { skilltreeid: 23, value: 2 }
@@ -194,6 +207,7 @@ class App extends Component {
       {
         name: "assassin",
         skilltreeid: 125,
+        skilltreeclass: ["rogue"],
         skillmod: [
           { skilltreeid: 22, value: 4 },
           { skilltreeid: 24, value: 2 }
@@ -207,6 +221,7 @@ class App extends Component {
       {
         name: "dark knight",
         skilltreeid: 80,
+        skilltreeclass: ["fighter", "cleric"],
         skillmod: [
           { skilltreeid: 64, value: 4 },
           { skilltreeid: 68, value: 2 }
@@ -220,6 +235,7 @@ class App extends Component {
       {
         name: "warlock",
         skilltreeid: 18,
+        skilltreeclass: ["fighter", "mage"],
         skillmod: [
           { skilltreeid: 4, value: 4 },
           { skilltreeid: 14, value: 2 }
@@ -233,6 +249,7 @@ class App extends Component {
       {
         name: "ninja",
         skilltreeid: 118,
+        skilltreeclass: ["fighter", "rogue"],
         skillmod: [
           { skilltreeid: 99, value: 4 },
           { skilltreeid: 101, value: 2 }
@@ -246,6 +263,7 @@ class App extends Component {
       {
         name: "necromancer",
         skilltreeid: 85,
+        skilltreeclass: ["cleric", "mage"],
         skillmod: [
           { skilltreeid: 79, value: 4 },
           { skilltreeid: 22, value: 2 }
@@ -259,6 +277,7 @@ class App extends Component {
       {
         name: "shaman",
         skilltreeid: 94,
+        skilltreeclass: ["cleric", "rogue"],
         skillmod: [
           { skilltreeid: 93, value: 4 },
           { skilltreeid: 57, value: 2 }
@@ -272,6 +291,7 @@ class App extends Component {
       {
         name: "illusionist",
         skilltreeid: 19,
+        skilltreeclass: ["mage", "rogue"],
         skillmod: [
           { skilltreeid: 116, value: 4 },
           { skilltreeid: 12, value: 2 }
@@ -353,7 +373,7 @@ class App extends Component {
       ]
     },
     charSheet: {
-      xp: 1,
+      xp: 300000,
       lastxp: 0,
       con: 5,
       str: 5,

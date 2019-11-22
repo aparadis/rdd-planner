@@ -60,6 +60,7 @@ class SkillsPage extends Component {
           getSkillIndex={this.getSkillIndex}
           handleSkillPoint={this.handleSkillPoint}
           checkAllSkillDeps={this.checkAllSkillDeps}
+          checkPrestigeSkill={this.checkPrestigeSkill}
           getSkillPoints={this.getSkillPoints}
           getSkillModText={this.getSkillModText}
           getSkillId={this.getSkillId}
@@ -70,6 +71,7 @@ class SkillsPage extends Component {
           getSkillIndex={this.getSkillIndex}
           handleSkillPoint={this.handleSkillPoint}
           checkAllSkillDeps={this.checkAllSkillDeps}
+          checkPrestigeSkill={this.checkPrestigeSkill}
           getSkillPoints={this.getSkillPoints}
           getSkillModText={this.getSkillModText}
           getSkillId={this.getSkillId}
@@ -80,6 +82,7 @@ class SkillsPage extends Component {
           getSkillIndex={this.getSkillIndex}
           handleSkillPoint={this.handleSkillPoint}
           checkAllSkillDeps={this.checkAllSkillDeps}
+          checkPrestigeSkill={this.checkPrestigeSkill}
           getSkillPoints={this.getSkillPoints}
           getSkillModText={this.getSkillModText}
           getSkillId={this.getSkillId}
@@ -90,6 +93,7 @@ class SkillsPage extends Component {
           getSkillIndex={this.getSkillIndex}
           handleSkillPoint={this.handleSkillPoint}
           checkAllSkillDeps={this.checkAllSkillDeps}
+          checkPrestigeSkill={this.checkPrestigeSkill}
           getSkillPoints={this.getSkillPoints}
           getSkillModText={this.getSkillModText}
           getSkillId={this.getSkillId}
@@ -209,53 +213,6 @@ class SkillsPage extends Component {
   };
 
   showStatusBar = () => {
-    /*  Might use this later on with mutiple skill trees..
-    if (this.state.enoughspalert) {
-      return (
-        <div
-          className="alert alert-warning"
-          role="alert"
-          onClick={this.resetAllAlerts}
-        >
-          No skillpoints left
-        </div>
-      );
-    }
-    if (this.state.levelreqalert) {
-      return (
-        <div
-          className="alert alert-warning"
-          role="alert"
-          onClick={this.resetAllAlerts}
-        >
-          Level not high enough
-        </div>
-      );
-    }
-
-    if (this.state.skilldepalert) {
-      return (
-        <div
-          className="alert alert-warning"
-          role="alert"
-          onClick={this.resetAllAlerts}
-        >
-          Skill dependency not met
-        </div>
-      );
-    }
-
-    if (this.state.maxskillalert) {
-      return (
-        <div
-          className="alert alert-warning"
-          role="alert"
-          onClick={this.resetAllAlerts}
-        >
-          Maximum skill reached
-        </div>
-      );
-    }*/
     return (
       <div className="card">
         <div className="card-body">
@@ -274,13 +231,6 @@ class SkillsPage extends Component {
         </div>
       </div>
     );
-  };
-
-  resetAllAlerts = () => {
-    this.setState({ levelreqalert: 0 });
-    this.setState({ skilldepalert: 0 });
-    this.setState({ maxskillalert: 0 });
-    this.setState({ enoughspalert: 0 });
   };
 
   checkSkillLevelReq = (skilltreeindex, currentlvl) => {
@@ -340,7 +290,7 @@ class SkillsPage extends Component {
     }
   };
 
-  checkClass = skilltreeindex => {
+  checkPrestigeSkill = skilltreeindex => {
     //Can only be assigned 1 prestige class
     if (this.havePrestigeClass()) {
       let curprestigeclass = this.props.charSheet.class[0];
@@ -358,21 +308,60 @@ class SkillsPage extends Component {
           }
         }
       }
-      // We're a Prestige class, assigning a non-prestige skill
-      // Check if it's in the same tree
-      else {
-        for (let idx in this.props.prestigeclass) {
-          if (this.props.prestigeclass[idx].name === curprestigeclass) {
-            if (
-              this.getClassFromSkillId(
-                this.props.prestigeclass[idx].skilltreeid
-              ) === this.props.skilltree[skilltreeindex].class
-            ) {
-              return true;
-            } else return false;
-          }
+    }
+
+    if (this.isPrestigeSkill(skilltreeindex)) {
+      let skilltreeid = this.props.skilltree[skilltreeindex].id;
+      let skillname = this.props.skilltree[skilltreeindex].name;
+      let pclasses = this.props.prestigeclass.find(
+        p => p.skilltreeid === skilltreeid
+      ).skilltreeclass;
+
+      // If we're dual class and this is a single-class prestige skill,
+      //  then we can't assign points to it
+      if (this.props.charSheet.class.length === 2 && pclasses.length === 1) {
+        return false;
+      }
+
+      //If we're single class, we can't assign a skillpoint to a dual class
+      //  prestige skill (until we actually dual class)
+      if (this.props.charSheet.class.length === 1 && pclasses.length === 2) {
+        return false;
+      }
+
+      // If we're single class, can't assign skillpoint to another single class
+      //  prestige skill that is not our current class
+      if (this.props.charSheet.class.length === 1 && pclasses.length === 1) {
+        if (!pclasses.includes(this.props.charSheet.class[0])) return false;
+      }
+
+      // If we're dual-class and this is a dual-class prestige skill
+      //  check if they're for the same classes
+      if (this.props.charSheet.class.length === 2 && pclasses.length === 2) {
+        if (
+          JSON.stringify(this.props.charSheet.class.sort()) !==
+          JSON.stringify(pclasses.sort())
+        ) {
+          return false;
         }
       }
+    }
+    return true;
+  };
+
+  checkClass = skilltreeindex => {
+    if (this.havePrestigeClass() && !this.isPrestigeSkill(skilltreeindex)) {
+      let curprestigeclass = this.props.charSheet.class[0];
+      let allowedtree = this.props.prestigeclass.find(
+        p => p.name === curprestigeclass
+      );
+      if (
+        allowedtree.skilltreeclass.includes(
+          this.props.skilltree[skilltreeindex].class
+        )
+      ) {
+        return true;
+      } else return false;
     }
 
     //Once we are dual classed, we cannot add skillpoints to trees other than those classes
@@ -406,6 +395,7 @@ class SkillsPage extends Component {
     let maxskill = false;
     let enoughsp = false;
     let allowedclass = false;
+    let allowprestigeskill = false;
 
     this.checkSkillLevelReq(skilltreeindex, currentlvl)
       ? (levelreq = true)
@@ -423,7 +413,18 @@ class SkillsPage extends Component {
       ? (allowedclass = true)
       : (allowedclass = false);
 
-    if (levelreq && skilldep && maxskill && enoughsp && allowedclass)
+    this.checkPrestigeSkill(skilltreeindex)
+      ? (allowprestigeskill = true)
+      : (allowprestigeskill = false);
+
+    if (
+      levelreq &&
+      skilldep &&
+      maxskill &&
+      enoughsp &&
+      allowedclass &&
+      allowprestigeskill
+    )
       return true;
     else return false;
   };
@@ -479,8 +480,6 @@ class SkillsPage extends Component {
   };
 
   handleSkillPoint = skilltreeindex => {
-    this.resetAllAlerts();
-
     if (this.checkAllSkillDeps(skilltreeindex)) {
       let skilltreecopy = this.props.skilltree;
       skilltreecopy[skilltreeindex].points += 1;

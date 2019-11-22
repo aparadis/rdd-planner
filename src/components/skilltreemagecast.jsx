@@ -26,6 +26,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("cast")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -46,6 +47,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("wand")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -66,6 +68,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("fire")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -84,6 +87,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("lightning")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -103,6 +107,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("ice")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -124,6 +129,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("fireball")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -142,6 +148,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("levitate")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -161,6 +168,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("ice_armor")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -182,6 +190,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("burn")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -199,6 +208,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("storm")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -216,6 +226,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("teleport")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -233,6 +244,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("ice_shield")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -254,6 +266,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("lava_blood")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -271,6 +284,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("counter")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -288,6 +302,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("portal")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -305,6 +320,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("freeze")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -326,6 +342,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("demon")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -346,6 +363,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("illusion")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -363,6 +381,7 @@ const SkillTreeMageCast = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("blizzard")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>

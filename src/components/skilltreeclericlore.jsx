@@ -22,6 +22,7 @@ const SkillTreeClericLore = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("lore")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -42,6 +43,7 @@ const SkillTreeClericLore = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("forage")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -63,6 +65,7 @@ const SkillTreeClericLore = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("cook")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -79,6 +82,7 @@ const SkillTreeClericLore = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("perceive")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -98,6 +102,7 @@ const SkillTreeClericLore = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("brew")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -114,6 +119,7 @@ const SkillTreeClericLore = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("iron_will")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -135,6 +141,7 @@ const SkillTreeClericLore = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("meditate")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -143,7 +150,7 @@ const SkillTreeClericLore = props => {
           <td className="table-dark">LV20</td>
           <td></td>
           <td></td>
-          <td>
+          <td className="table-success">
             <SkillText
               skillname="trinket"
               skilltree={props.skilltree}
@@ -156,6 +163,7 @@ const SkillTreeClericLore = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("trinket")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>

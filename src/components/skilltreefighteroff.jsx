@@ -21,6 +21,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("hammer")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -40,6 +41,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("sword")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -60,6 +62,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("archery")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -81,6 +84,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("axe")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -100,6 +104,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("spear")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -119,6 +124,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("hunt")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -146,6 +152,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("melee")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -165,6 +172,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("track")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -182,6 +190,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("aim")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -202,6 +211,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("mine")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -221,6 +231,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("injure")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -242,6 +253,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("pierce")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -266,6 +278,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("cleave")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -283,6 +296,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("stun")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -302,6 +316,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("stack")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -326,6 +341,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("smith")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -348,6 +364,7 @@ const SkillTreeFighterOff = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("volley")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>

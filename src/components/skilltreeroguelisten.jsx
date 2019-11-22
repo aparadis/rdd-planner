@@ -23,6 +23,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("listen")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -52,6 +53,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("search")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -79,6 +81,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("unlock")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -95,6 +98,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("appraise")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -111,6 +115,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("seduce")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -136,6 +141,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("trap")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -152,6 +158,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("bluff")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -168,6 +175,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("sing")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -193,6 +201,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("forgery")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -209,6 +218,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("bargain")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -225,6 +235,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("music")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
@@ -250,6 +261,7 @@ const SkillTreeRogueListen = props => {
             <SkillButton
               skilltreeindex={props.getSkillIndex("craft")}
               checkAllSkillDeps={props.checkAllSkillDeps}
+              checkPrestigeSkill={props.checkPrestigeSkill}
               handleSkillPoint={props.handleSkillPoint}
             />
           </td>
