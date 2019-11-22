@@ -83,6 +83,18 @@ class CharSheetPage extends Component {
   getStatMods = statType => {
     let modsum = 0;
 
+    //Check for prestige class bonuses
+    let curclass = this.props.charSheet.class[0];
+    let pclasses = this.props.prestigeclass.find(p => p.name === curclass);
+    if (pclasses) {
+      for (let idx in pclasses.statmod) {
+        if (pclasses.statmod[idx].stat.toUpperCase() === statType) {
+          console.log("prestige bonus", statType, pclasses.statmod[idx].value);
+          modsum += pclasses.statmod[idx].value;
+        }
+      }
+    }
+
     //Check for gender bonuses
     let gender = this.props.charSheet.gender;
     for (let idx in this.props.gendermod[gender]) {
@@ -107,6 +119,23 @@ class CharSheetPage extends Component {
 
   getStatModText = statType => {
     let modtext = "";
+
+    //Check for prestige class bonuses
+    let curclass = this.props.charSheet.class[0];
+    let pclasses = this.props.prestigeclass.find(p => p.name === curclass);
+    if (pclasses) {
+      for (let idx in pclasses.statmod) {
+        if (pclasses.statmod[idx].stat.toUpperCase() === statType) {
+          if (modtext !== "") modtext += "<br>";
+          modtext +=
+            "Prestige: " +
+            pclasses.name +
+            " (" +
+            pclasses.statmod[idx].value +
+            ")";
+        }
+      }
+    }
 
     //Check for gender bonuses
     let gender = this.props.charSheet.gender;

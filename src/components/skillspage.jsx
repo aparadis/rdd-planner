@@ -148,6 +148,17 @@ class SkillsPage extends Component {
       }
     }
 
+    //Check for prestige class bonuses
+    let curclass = this.props.charSheet.class[0];
+    let pclasses = this.props.prestigeclass.find(p => p.name === curclass);
+    if (pclasses) {
+      for (let idx in pclasses.skillmod) {
+        if (pclasses.skillmod[idx].skilltreeid === skilltreeid) {
+          modpoints += pclasses.skillmod[idx].value;
+        }
+      }
+    }
+
     return (
       this.props.skilltree[this.getSkillIndex(skillname)].points + modpoints
     );
@@ -186,6 +197,24 @@ class SkillsPage extends Component {
         }
       }
     }
+
+    //Check for prestige class bonuses
+    let curclass = this.props.charSheet.class[0];
+    let pclasses = this.props.prestigeclass.find(p => p.name === curclass);
+    if (pclasses) {
+      for (let idx in pclasses.skillmod) {
+        if (pclasses.skillmod[idx].skilltreeid === skilltreeid) {
+          if (skillmodtext !== "") skillmodtext += "<br>"; //More than 1 item mod found, so separate them
+          skillmodtext +=
+            "Prestige: " +
+            pclasses.name +
+            " (" +
+            pclasses.skillmod[idx].value +
+            ")";
+        }
+      }
+    }
+
     return skillmodtext;
   };
 

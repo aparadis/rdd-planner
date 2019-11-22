@@ -1643,6 +1643,7 @@ class App extends Component {
             lastStatUpdate={this.state.lastStatUpdate}
             itemslist={this.state.itemslist}
             gendermod={this.state.gendermod}
+            prestigeclass={this.state.prestigeclass}
           />
           <ItemsPage
             charSheet={this.state.charSheet}
