@@ -28,7 +28,7 @@ class SkillsPage extends Component {
           variant="tabs"
           defaultActiveKey="#mage"
         >
-          <Nav.Item>
+          <Nav.Item style={{ background: "red" }}>
             <Nav.Link
               href="#fighter"
               onClick={() => this.showPage("fightertree")}
@@ -36,7 +36,7 @@ class SkillsPage extends Component {
               Fighter
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          <Nav.Item style={{ background: "#EE82EE" }}>
             <Nav.Link
               href="#cleric"
               onClick={() => this.showPage("clerictree")}
@@ -44,12 +44,12 @@ class SkillsPage extends Component {
               Cleric
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          <Nav.Item style={{ background: "lightblue" }}>
             <Nav.Link href="#mage" onClick={() => this.showPage("magetree")}>
               Mage
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          <Nav.Item style={{ background: "lightgreen" }}>
             <Nav.Link href="#rogue" onClick={() => this.showPage("roguetree")}>
               Rogue
             </Nav.Link>
@@ -143,7 +143,7 @@ class SkillsPage extends Component {
     //Check for skill mods from race
     let race = this.props.charSheet.race;
     for (var idx in this.props.racesmod[race]) {
-      if (this.props.racesmod[race][idx].skilltreeid == skilltreeid) {
+      if (this.props.racesmod[race][idx].skilltreeid === skilltreeid) {
         modpoints += this.props.racesmod[race][idx].value;
       }
     }
@@ -343,7 +343,6 @@ class SkillsPage extends Component {
 
     if (this.isPrestigeSkill(skilltreeindex)) {
       let skilltreeid = this.props.skilltree[skilltreeindex].id;
-      let skillname = this.props.skilltree[skilltreeindex].name;
       let pclasses = this.props.prestigeclass.find(
         p => p.skilltreeid === skilltreeid
       ).skilltreeclass;
@@ -472,14 +471,14 @@ class SkillsPage extends Component {
     return prestigefound;
   };
 
-  setClass = (charclass, skilltreeid, skilltreeindex) => {
+  setClass = (charclass, skilltreeid) => {
     let charSheetCopy = this.props.charSheet;
 
     //Check if we already have a prestige class assigned
     if (!this.havePrestigeClass()) {
       //Check if we assigning a new prestige class
       for (let idx in this.props.prestigeclass) {
-        if (this.props.prestigeclass[idx].skilltreeid == skilltreeid) {
+        if (this.props.prestigeclass[idx].skilltreeid === skilltreeid) {
           charSheetCopy.class = [this.props.prestigeclass[idx].name];
           this.setState({ charSheet: charSheetCopy });
           return;
@@ -493,7 +492,7 @@ class SkillsPage extends Component {
     else return false;
 
     //Check if this is our first class
-    if (charSheetCopy.class.length == 0) {
+    if (charSheetCopy.class.length === 0) {
       charSheetCopy.class.push(charclass);
       this.setState({ charSheet: charSheetCopy });
       return;

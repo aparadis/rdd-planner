@@ -373,7 +373,7 @@ class App extends Component {
       ]
     },
     charSheet: {
-      xp: 300000,
+      xp: 1,
       lastxp: 0,
       con: 5,
       str: 5,
