@@ -28,19 +28,23 @@ class CharSheetUtils extends Component {
 
   static getLevelFromXP(charSheet) {
     //Build level list xp until lvl99
+    let maxlevel = 99;
     let levelsTable = [];
     levelsTable[0] = 0;
     levelsTable[1] = 0;
     levelsTable[2] = 1000;
     let i;
-    for (i = 3; i < 100; i++) {
+    for (i = 3; i <= maxlevel; i++) {
       levelsTable[i] =
         levelsTable[i - 1] + (levelsTable[i - 1] - levelsTable[i - 2]) + 1000;
     }
 
     //Get the nearest xp for the next level and return lvl before that (current level)
-    let level = levelsTable.filter(lvl => lvl > charSheet.xp);
-    return levelsTable.indexOf(level[0]) - 1;
+    let levelidx = levelsTable.filter(lvl => lvl > charSheet.xp);
+    let level = levelsTable.indexOf(levelidx[0]) - 1;
+
+    if (level < 1) return maxlevel;
+    else return levelsTable.indexOf(levelidx[0]) - 1;
   }
 }
 
