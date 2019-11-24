@@ -44,7 +44,7 @@ class CharSheetPage extends Component {
   handleXpUpdate = e => {
     let charSheetCopy = this.props.charSheet;
 
-    charSheetCopy.lastxp = charSheetCopy.xp;
+    charSheetCopy.lastxp = this.props.charSheet.xp;
     let lastlvl = CharSheetUtils.getLevelFromXP(charSheetCopy);
 
     charSheetCopy.xp = +e.target.value;
@@ -52,10 +52,13 @@ class CharSheetPage extends Component {
 
     //Update SP based on new lvl
     if (curlvl - lastlvl >= 1) {
+      console.log("level up - current sp:", charSheetCopy.sp);
       charSheetCopy.sp += (curlvl - lastlvl) * 2;
+      console.log("level up - after sp:", charSheetCopy.sp);
       charSheetCopy.statpoints += (curlvl - lastlvl) * 2;
       charSheetCopy.lastStatUpdate = "";
-    } else if (curlvl - lastlvl < 1) {
+    } else if (curlvl - lastlvl < 0) {
+      console.log("Leveling down", curlvl, lastlvl);
       //Lvl went down, we'll be over assigned on the skilpoints so reset the skilltree
       //Also reset stat points assignation
       let skilltreeCopy = this.props.skilltree;

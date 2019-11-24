@@ -173,7 +173,7 @@ class SkillsPage extends Component {
     //Check for skill mods from race
     let race = this.props.charSheet.race;
     for (var idx in this.props.racesmod[race]) {
-      if (this.props.racesmod[race][idx].skilltreeid == skilltreeid) {
+      if (this.props.racesmod[race][idx].skilltreeid === skilltreeid) {
         if (skillmodtext !== "") skillmodtext += "<br>";
         skillmodtext +=
           "Racial: " + race + " (" + this.props.racesmod[race][idx].value + ")";
@@ -303,8 +303,9 @@ class SkillsPage extends Component {
   checkMaxSkill = (skilltreeindex, currentlvl) => {
     if (
       currentlvl + 1 >
-      this.props.skilltree[skilltreeindex].points +
-        this.props.skilltree[skilltreeindex].level
+        this.props.skilltree[skilltreeindex].points +
+          this.props.skilltree[skilltreeindex].level &&
+      this.props.skilltree[skilltreeindex].points < 20
     ) {
       return true;
     } else return false;
@@ -514,17 +515,16 @@ class SkillsPage extends Component {
       let skilltreecopy = this.props.skilltree;
       let charSheetCopy = this.props.charSheet;
 
-      if (skilltreecopy[skilltreeindex].points < 20) {
-        skilltreecopy[skilltreeindex].points += 1;
-        charSheetCopy.sp -= 1;
-        this.setState({ skilltree: skilltreecopy });
-      }
+      skilltreecopy[skilltreeindex].points += 1;
+      charSheetCopy.sp -= 1;
+
       this.setClass(
         skilltreecopy[skilltreeindex].class,
         skilltreecopy[skilltreeindex].id,
         skilltreeindex
       );
 
+      this.setState({ skilltree: skilltreecopy });
       this.setState({ charSheet: charSheetCopy });
     }
   };
